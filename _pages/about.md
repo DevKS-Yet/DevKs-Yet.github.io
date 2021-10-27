@@ -6,6 +6,6 @@ layout: single
 
 ## DevKS-Yet.github.io 블로그
 
-설명할게 없네요... 여기 가서 궁금한걸 확인해주세요
+코더에서 프로그래머로, 프로그래머에서 개발자가 될때까지 적는 일지
 
 <https://devks-yet.github.io>
