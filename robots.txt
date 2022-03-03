@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devks-yet.github.io/sitemap.xml
