@@ -136,3 +136,13 @@ String은 `String sentence = "Hello World";`으로 선언 및 초기화까지도
 
 
 ### 2.2 상수와 리터럴(constant &amp; literal)
+
+###### 상수
+상수도 변수와 같이 값을 저장할 수 있는 공간이지만 다른 점은 한번 값을 저장하면 다른 값으로 변경할 수 없다. 선언은 다음과 같다.
+```java
+final int MAX_SPEED;  // 에러. 상수는 선언과 동시에 초기화해야함
+final int MAX_VALUE = 100;  // 정상. 상수 MAX_SPEED를 선언 & 초기화
+MAX_VALUE = 200;  // 에러. 상수의 값은 변경될 수 없음.
+```
+
+###### 리터럴
