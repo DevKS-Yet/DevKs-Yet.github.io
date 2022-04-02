@@ -1,5 +1,5 @@
 ---
-title: "2&#46 자바의 정석 2일차"
+title: "자바의 정석 2일차"
 excerpt: "post"
 
 categories:
