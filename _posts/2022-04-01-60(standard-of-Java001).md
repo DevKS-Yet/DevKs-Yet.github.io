@@ -62,3 +62,47 @@ JVM은 자바를 실행하기 위한 가상 머신이다.  가상  머신은 소
 ### 2.2 Java API 문서 설치하기
 `http://java.sun.com/`에서 Java API문서를 볼 수 있으며 좀 양이 많지만 일단 자주 사용하는 것부터 보자. 그리고 영어지만 구글 번역기 돌리면 읽을만 하다. 아니면 영어 공부도 할겸 원문으로 읽어보자
 
+
+## 3. 자바로 프로그램 작성하기
+
+### 3.1 Hello.java
+자바 프로그램을 개발할려면 JDK 설치 외에 편집기가 필요하다. 다양하고 좋은 편집기가 많지만 해당 저자는 `메모장` 또는 `editplus`를 추천을 한다. `Eclipse`나 `IntelliJ`는 자바에 익숙해진 후에 사용하는 것을 추천한다(개인적인 생각으로는 자동완성이 없는 상태에서 하면서 익숙해지길 바라는 듯하다).
+> 예제 1-1 /ch1/Hello.java
+> ```java
+> class Hello {
+>   public static void main(String[] args) {
+>       System.out.println("Hello, world.");  // 화면에 글자를 출력한다.
+>   }
+> }
+> ```
+위의 예제를 편집기를 통해 작성한 다음에 `Hello.java`로 저장을 하자.  
+그 후에 `javac.exe`를 사용하여 `Hello.java`를 컴파일하여 `Hello.class`를 생성해야한다.
+
+    Hello.java 작성 -&gt; (javac.exe 컴파일) -&gt; Hello.class 생성 -&gt; (java.exe 실행) -&gt; "Hello, world." 출력
+command 창을 열어서 해당 파일 위치로 가서 `javac Hello.java`를 치면 `Hello.class`가 생성이 된다. 이후에 `java Hello`를 치면 command 창에 `Hello, world.`가 적히는 것을 확인할 수 있다.
+
+### 3.2 자주 발생하는 에러와 해결방법
+여기에 안적혀져있다면 인터넷에서 찾아보자
+1. `cannot find symbol` 또는 `cannot resolve symbol`  
+선언되지 않은 변수나 메소드를 사용하거나 이름을 잘못 입력한 경우.
+2. `';' expectd`  
+세미콜론이 없다는 뜻. 자바의 모든 문장의 끝에는 `';'`가 붙어야한다.
+3. `Exception in thread "main" java.lang.NoSuchMethodError: main`  
+main메서드를 찾을 수 없다는 뜻이다. `public static void main(String[] args)`의 존재여부와 오타가 있는지 확인해봐야한다.
+4. `Exception in thread "main" java.lang.NoClassDefFountError: Hello`  
+`Hello`라는 클래스를 찾을 수 없다는 뜻이다. 제대로 `Hello.java`를 컴파일했는지와 컴파일된 파일이 제대로 존재하는지 확인하자. 만약 클래스파일이 있는데 동일한 오류가 나타난다면 classpath의 설정을 확인해보자
+5. `illegal start of expression`  
+해당 에러는 괄호나 수식이나 if문, for문 등에서 문법적 오류가 있을 때 발생한다. 또는 public이나 static과 같은 키워드를 잘못 사용한 경우에도 발생한다.
+6. `class, interface, or enum expected`  
+class나 interface 또는 enum이 없다 라는 뜻이지만 보통은 괄호가 제대로 안열리거나 안닫혔을 경우 나타난다.
+
+### 3.3 자바 프로그램의 실행과정
+해당 부분은 인터넷을 통해 사진으로 이해하는 것이 더 빠르다고 판단하여 적지 않는다.
+
+### 3.4 주석(comment)
+프로그램을 작성할때는 혼자만 작성하는 것이 아니라 협업이다. 그렇기에 코드를 작성하고 나만 알아볼 수 있어서는 안된다. 혼자만 볼 코드더라도 몇주 뒤에 다시 보면 헤멜 경우가 많다. 그런 경우를 대비하기 위해 개발자들은 주석을 사용한다.
+
+자바에서 주석은 2가지 방법이 있다.
+ - 한 줄 주석 : `//`부터 해당 라인 끝까지의 내용은 주석으로 간주된다.
+ - 범위주석 : `/*`와 `*/`사이의 내용은 주석으로 간주된다.
+> 추가적인 것은 javadoc을 참고하길 바란다.
