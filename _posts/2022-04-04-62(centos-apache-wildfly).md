@@ -139,11 +139,11 @@ tags:
    cd /apache/src/
    ```
 2. 다운로드 리스트 (wget으로 다운로드를 하거나 ftp 사용해서 다운로드)
-  - httpd-2.x.xx.tar.gz
-  - tomcat-connectors-1.x.xx-src.tar.gz
-  - pcre-8.xx.tar.gz
-  - apr-1.x.x.tar.gz
-  - apr-util-1.x.x.tar.gz
+  - httpd-2.x.xx.tar.gz : 아파치 HTTP Server (WEB 서버)
+  - tomcat-connectors-1.x.xx-src.tar.gz : 다른 WAS와 WEB을 연결시켜주는 플러그인 
+  - pcre-8.xx.tar.gz : Perl Compatible Regular Expressions
+  - apr-1.x.x.tar.gz : Apache Portable Runtime
+  - apr-util-1.x.x.tar.gz : Apache Portable Runtime Util
 3. 압축해제 (`/apache/src/` 에서)
    ```shell
    tar xvzf httpd-2.x.xx.tar.gz
