@@ -157,19 +157,19 @@ tags:
     ```shell
     cd /apache/src/pcre-8.xx
     ./configure --prefix=/apache/pcre  # /apache/pcre에 설치하겠다는 것
-    make &amp;&amp; make install  # 만약 뭔가 불길한 색깔(빨강&amp;주황)이 보인다면 make check를 해볼 것
+    make && make install  # 만약 뭔가 불길한 색깔(빨강&amp;주황)이 보인다면 make check를 해볼 것
     ```
   - apr
     ```shell
     cd /apache/src/apr-1.x.x
     ./configure --prefix=/apache/apr
-    make &amp;&amp; make install
+    make && make install
     ```
   - apr-util
     ```shell
     cd /apache/src/apr-util-1.x.x
     ./configure --prefix=/apache/apr-util --with-apr=/apache/apr  # --with는 특정 패키지 이용하여 설치 시
-    make &amp;&amp; make install
+    make && make install
     ```
   - apache
     ```shell
@@ -179,13 +179,13 @@ tags:
     --with-apr-util=/apache/apr-util \
     --with-pcre=/apache/pcre \
     --enable-mpms-shared=all  # event, worker, prefork 방식을 모두 사용 가능(???). all로 하고 conf파일 수정하는게 정신건강상 좋다고 함
-    make &amp;&amp; install
+    make && install
     ```
   - tomcat-connector (이건 꼭 `cd` 부분 확실하게 잘 보기)
     ```shell
     cd /apache/src/tomcat-connectors-1.x.xx-src/native
     ./configure --with-apxs=/apache/apache2/bin/apxs
-    make &amp;&amp; install
+    make && install
     ```
 
 ### 3. 아파치 설정 수정
