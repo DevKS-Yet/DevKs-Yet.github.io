@@ -38,39 +38,39 @@ tags:
     ```shell
     rpm -qa *jdk
     ```
-  1. 설치된 jdk가 있다면
-     ```shell
-     yum remove [해당 jdk명]
-     ```
+   1. 설치된 jdk가 있다면
+      ```shell
+      yum remove [해당 jdk명]
+      ```
 2. openjdk-devel 1.7 설치
     ```shell
     yum -y install java-1.7.0-openjdk-devel.x86_64
     ```
 3. 환경변수 설정
-  1. 자바 경로 확인 후 /etc/profile 진입
-     ```shell
-     which java  # 자바를 호출하면 어디서 불러오는지 경로 확인
-     >>[자바 경로]
-     readlink -f [자바 경로]  # 바로가기 경로가 아니라 원본 경로 확인
-     >>[원본 자바 경로]
+   1. 자바 경로 확인 후 /etc/profile 진입
+      ```shell
+      which java  # 자바를 호출하면 어디서 불러오는지 경로 확인
+      >>[자바 경로]
+      readlink -f [자바 경로]  # 바로가기 경로가 아니라 원본 경로 확인
+      >>[원본 자바 경로]
   
-     vi /etc/profile
-     ```
-  2. /etc/profile 에서 수정
-     ```shell
-     export JAVA_HOME=[원본 자바 경로에서 /bin/java 제외한 경로]  # /usr/lib/jvm/java-1.7.0-openjdk-1.7~~~.el7_8.x86_64/jre
-     export PATH=$PATH:$JAVA_HOME/bin
-     ```
-     이후 `:wq`로 save &amp; quit
-  3. 환경변수 등록 확인
-     ```shell
-     echo $JAVA_HOME
-     ```
-  4. 자바 버전 확인
-     ```shell
-     java -version
-     javac -version
-     ```
+      vi /etc/profile
+      ```
+   2. /etc/profile 에서 수정
+      ```shell
+      export JAVA_HOME=[원본 자바 경로에서 /bin/java 제외한 경로]  # /usr/lib/jvm/java-1.7.0-openjdk-1.7~~~.el7_8.x86_64/jre
+      export PATH=$PATH:$JAVA_HOME/bin
+      ```
+      이후 `:wq`로 save &amp; quit
+4. 환경변수 등록 확인
+   ```shell
+   echo $JAVA_HOME
+   ```
+5. 자바 버전 확인
+   ```shell
+   java -version
+   javac -version
+   ```
 
 
 ### 3. 방화벽 설정
@@ -174,7 +174,6 @@ tags:
   - apache
     ```shell
     cd /apache/src/httpd-2.x.xx
-    
     ./configure --prefix=/apache/apache2 \  # minor 버전까지 적어도 됨
     --with-apr=/apache/apr \
     --with-apr-util=/apache/apr-util \
