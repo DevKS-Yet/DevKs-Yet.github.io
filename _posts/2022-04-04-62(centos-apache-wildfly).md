@@ -24,14 +24,14 @@ tags:
    yum -y update
    ```
 4. 필요한 드라이버
-  1. wget - 웹 상에서 파일 다운로드 시 필요
-  2. net-tools - ifconfig 필요 시 (`ip addr`로도 가능)
-  3. gcc - `tar.gz` 설치 시 필요
-  4. gcc-c++ - `tar.gz` 설치 시 필요
-  5. make - `tar.gz`파일을 압축 해제한 후 빌드 시 필요
-  6. perl - 무지성으로 설치해서 몰랐으나 pcre 때문에 필요할 듯?
-  7. libtool - apr이였나 apache였나 설치하다가 이거 뭐시기 에러 뜸;
-  8. unzip - Wildfly 다운로드 후 zip 압축 해제 시 필요
+   1. wget - 웹 상에서 파일 다운로드 시 필요
+   2. net-tools - ifconfig 필요 시 (`ip addr`로도 가능)
+   3. gcc - `tar.gz` 설치 시 필요
+   4. gcc-c++ - `tar.gz` 설치 시 필요
+   5. make - `tar.gz`파일을 압축 해제한 후 빌드 시 필요
+   6. perl - 무지성으로 설치해서 몰랐으나 pcre 때문에 필요할 듯?
+   7. libtool - apr이였나 apache였나 설치하다가 이거 뭐시기 에러 뜸;
+   8. unzip - Wildfly 다운로드 후 zip 압축 해제 시 필요
 
 ### 2. JDK 설치
 1. 기존에 설치된 jdk 확인
@@ -157,7 +157,7 @@ tags:
     ```shell
     cd /apache/src/pcre-8.xx
     ./configure --prefix=/apache/pcre  # /apache/pcre에 설치하겠다는 것
-    make && make install  # 만약 뭔가 불길한 색깔(빨강&amp;주황)이 보인다면 make check를 해볼 것
+    make && make install  # 만약 뭔가 불길한 색깔(빨강&주황)이 보인다면 make check를 해볼 것
     ```
   - apr
     ```shell
