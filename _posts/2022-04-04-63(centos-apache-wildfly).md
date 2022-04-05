@@ -21,7 +21,7 @@ tags:
    \*주의사항으로는 `Fedora Media Writer`를 공홈에서는 추천하지만 `exe`에 문제가 있어서 `rufus`로 설치하는 것을 추천
 3. 설치 후 CentOS 업데이트
    ```shell
-   yum -y update
+   yum -y update  # YellowDog Updater, Modified의 약자
    ```
 4. 필요한 드라이버
    1. wget - 웹 상에서 파일 다운로드 시 필요
@@ -39,7 +39,7 @@ tags:
 ### 2. JDK 설치
 1. 기존에 설치된 jdk 확인
     ```shell
-    rpm -qa *jdk
+    rpm -qa *jdk  # Red Hat Package Manager의 약자
     ```
    1. 설치된 jdk가 있다면
       ```shell
@@ -124,7 +124,7 @@ tags:
 ### 1. 설치 전 환경 세팅 (root 유저로 수행)
 1. 아파치 설치 및 로그 디렉토리 생성
    ```shell
-   mkdir /apache/src /ap_log
+   mkdir /apache/src /ap_log  # make directory의 약자
    ```
 2. `apache`유저 생성 및 패스워드 설정
    ```shell
@@ -133,17 +133,17 @@ tags:
    ```
 3. `apache`에 `1`에서 만든 디렉토리 권한 부여
    ```shell
-   chown apache:apache /apache /ap_log
+   chown apache:apache /apache /ap_log  # changes user ownership of의 약자
    ```
 
 ### 2. 소스 파일 다운로드 및 빌드 (apache 유저로 수행)
 1. 유저 전환
    ```shell
-   su - apache
+   su - apache  # substitute user 라는 뜻
    ```
 2. 다운로드 경로
    ```shell
-   cd /apache/src/
+   cd /apache/src/  # change directory의 약자
    ```
 3. 다운로드 리스트 (wget으로 다운로드를 하거나 ftp 사용해서 다운로드)
   - httpd-2.x.xx.tar.gz : 아파치 HTTP Server (WEB 서버)
@@ -153,7 +153,7 @@ tags:
   - apr-util-1.x.x.tar.gz : Apache Portable Runtime Util
 3. 압축해제 (`/apache/src/` 에서)
    ```shell
-   tar xvzf httpd-2.x.xx.tar.gz
+   tar xvzf httpd-2.x.xx.tar.gz  # tape archive의 약자
    tar xvzf tomcat-connectors-1.x.xx-src.tar.gz
    tar xvzf pcre-8.xx.tar.gz
    tar xvzf apr-1.x.x.tar.gz
@@ -217,7 +217,7 @@ tags:
 
 ### 5. 아파치 설치 및 기동 확인
 ```shell
-ps -ef | grep httpd
+ps -ef | grep httpd  # processes status와 global regular expression print의 약자
 ```
 
 
