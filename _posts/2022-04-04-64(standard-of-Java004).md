@@ -41,4 +41,34 @@ char ch1 = 65;  // 위와 아래와 동일
 
 ###### 특수 문자 다루기
 
-######
+`char`형에는 영문자 외에 스페이스나 줄바꿈 등과 같은 특수문자도 저장할 수 있다.  
+해당 문자들은 아래와 같다
+
+| 특수문자 | 문자 리터럴 |
+|:---|:---|
+| tab | `\t` |
+| backspace | `\b` | 
+| form feed | `\f` |
+| new line | `\n` |
+| carriage return | `\r` |
+| single quotation mark | `\'` |
+| double quotation mark | `\"` |
+| backslash | `\\` |
+묘한 것이 있다. 분명 `char`형은 문자 하나만 저장할 수 있다고 했지만 보면 특수문자는 2개로 이루어져있다. 하지만 컴퓨터는 해당 특수문자를 한 문자로 이해한다.
+
+##### 예제 2-8/ch2/SpecialCharEx.java
+해당 예제는 책에 있는 것과 다르게 새로 만들었다.
+```java
+class SpecialCharEx {
+    public static void main(String[] args) {
+        System.out.println("\\t - this is just a \t example");
+        System.out.println("\\b - this is just a \b example");
+        System.out.println("\\f - this is just a \f example");
+        System.out.println("\\n - this is just a \n example");
+        System.out.println("\\r - this is just a \r example");
+        System.out.println("\\\' - this is just a \' example");
+        System.out.println("\\\" - this is just a \" example");
+        System.out.println("\\\\ - this is just a \\ example");
+    }
+}
+```
