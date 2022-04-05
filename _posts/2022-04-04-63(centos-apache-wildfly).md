@@ -32,6 +32,9 @@ tags:
    6. perl - 무지성으로 설치해서 몰랐으나 pcre 때문에 필요할 듯?
    7. libtool - apr이였나 apache였나 설치하다가 이거 뭐시기 에러 뜸;
    8. unzip - Wildfly 다운로드 후 zip 압축 해제 시 필요
+   ```shell
+   yum -y install wget  # 이렇게 설치할 수 있으니 원하는 드라이버 설치
+   ```
 
 ### 2. JDK 설치
 1. 기존에 설치된 jdk 확인
@@ -134,11 +137,15 @@ tags:
    ```
 
 ### 2. 소스 파일 다운로드 및 빌드 (apache 유저로 수행)
-1. 다운로드 경로
+1. 유저 전환
+   ```shell
+   su - apache
+   ```
+2. 다운로드 경로
    ```shell
    cd /apache/src/
    ```
-2. 다운로드 리스트 (wget으로 다운로드를 하거나 ftp 사용해서 다운로드)
+3. 다운로드 리스트 (wget으로 다운로드를 하거나 ftp 사용해서 다운로드)
   - httpd-2.x.xx.tar.gz : 아파치 HTTP Server (WEB 서버)
   - tomcat-connectors-1.x.xx-src.tar.gz : 다른 WAS와 WEB을 연결시켜주는 플러그인 
   - pcre-8.xx.tar.gz : Perl Compatible Regular Expressions
