@@ -244,25 +244,25 @@ mkdir jboss
     ```xml
     <server xmlns="urn:jboss:domain:3.0">
     <!-- 생략 -->
-    <interface name="management">
-        <inet-address value="${jboss.bind.address.management:192.168.0.24}"/>  <!-- 원하는 관리자용 IP적기 -->
-    </interface>
-    <interface name="public">
-        <inet-address value="${jboss.bind.address:192.168.0.24}"/>  <!-- 원하는 공개용 IP적기 -->
-    </interface>
+        <interface name="management">
+            <inet-address value="${jboss.bind.address.management:192.168.0.24}"/>  <!-- 원하는 관리자용 IP적기 -->
+        </interface>
+        <interface name="public">
+            <inet-address value="${jboss.bind.address:192.168.0.24}"/>  <!-- 원하는 공개용 IP적기 -->
+        </interface>
     <!-- 생략 -->
-    <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
-        <socket-binding name="management-http" interface="management" port="${jboss.management.http.port:9990}"/>  <!-- 관리자 포트번호 -->
-        <socket-binding name="management-https" interface="management" port="${jboss.management.https.port:9993}"/>
-        <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>  <!-- (중요)추후 WEB서버 연동 포트 -->
-        <socket-binding name="http" port="${jboss.http.port:8080}"/>  <!-- WAS 포트 -->
-        <socket-binding name="https" port="${jboss.https.port:8443}"/>
-        <socket-binding name="txn-recovery-environment" port="4712"/>
-        <socket-binding name="txn-status-manager" port="4713"/>
-        <outbound-socket-binding name="mail-smtp">  <!-- 이메일 관련 -->
-            <remote-destination host="localhost" port="25"/>
-        </outbound-socket-binding>
-    </socket-binding-group>
+        <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:0}">
+            <socket-binding name="management-http" interface="management" port="${jboss.management.http.port:9990}"/>  <!-- 관리자 포트번호 -->
+            <socket-binding name="management-https" interface="management" port="${jboss.management.https.port:9993}"/>
+            <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>  <!-- (중요)추후 WEB서버 연동 포트 -->
+            <socket-binding name="http" port="${jboss.http.port:8080}"/>  <!-- WAS 포트 -->
+            <socket-binding name="https" port="${jboss.https.port:8443}"/>
+            <socket-binding name="txn-recovery-environment" port="4712"/>
+            <socket-binding name="txn-status-manager" port="4713"/>
+            <outbound-socket-binding name="mail-smtp">  <!-- 이메일 관련 -->
+                <remote-destination host="localhost" port="25"/>
+            </outbound-socket-binding>
+        </socket-binding-group>
     </server>
     ```
 3. 관리자 계정 생성
