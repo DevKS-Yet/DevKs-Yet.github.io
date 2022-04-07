@@ -32,6 +32,7 @@ tags:
    6. perl - 무지성으로 설치해서 몰랐으나 pcre 때문에 필요할 듯?
    7. libtool - apr이였나 apache였나 설치하다가 이거 뭐시기 에러 뜸;
    8. unzip - Wildfly 다운로드 후 zip 압축 해제 시 필요
+   9. expat-devel - 이거 없으면 apr-util에서 에러 난다.
    ```shell
    yum -y install wget  # 이렇게 설치할 수 있으니 원하는 드라이버 설치
    ```
