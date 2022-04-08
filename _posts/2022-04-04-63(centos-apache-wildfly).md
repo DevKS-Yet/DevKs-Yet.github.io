@@ -11,7 +11,7 @@ tags:
 - wildfly
 ---
 
-# 온-나라 AP 설치 메뉴얼
+# 설치 메뉴얼
 
 ## 운영체제 설치 및 세팅
 
@@ -79,9 +79,13 @@ tags:
 
 ### 3. 방화벽 설정
 개발 환경에서는 방화벽을 비활성화 하여 진행하며 필요에 따라 서비스용 포트 허용
-- 비활성화
+- 일시적 비활성화
   ```shell
-  service firewalld stop
+  systemctl stop firewalld
+  ```
+- 재부팅 시에도 비활성화
+  ```shell
+  systemctl disable firewalld
   ```
 
 
