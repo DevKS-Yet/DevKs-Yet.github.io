@@ -168,3 +168,231 @@ class OperatorEx7 {
 }
 ```
 
+##### 예제 3-8 / ch3/OperatorEx8.java
+```java
+class OperatorEx8 {
+    public static void main(String[] args) {
+        int a = 1_000_000;
+        int b = 2_000_000;
+        
+        long c = a * b;
+
+        System.out.println(c);
+    }
+}
+```
+위의 예제의 결과는 2_000_000_000_000이 아닌 -1454759936이다. 이유는 연산 결과가 int형으로 되었기 때문이다.  
+올바른 결과를 얻으려면 우변에 long형으로 형변환을 해주어야한다(`ling c = (long) a * b`).
+
+##### 예제 3-9/ch3/OperatorEx9.java
+```java
+class OperatorEx9 {
+    public static void main(String[] args) {
+        long a = 1_000_000 * 1_000_000;
+        long b = 1_000_000 * 1_000_000L;
+
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+    }
+}
+```
+예제 3-8과 동일한 이유로 출력 값이 다르다.
+
+##### 예제 3-10/ch3/OperatorEx10.java
+```java
+class OperatorEx10 {
+    public static void main(String[] args) {
+        int a = 1_000_000;
+        
+        int result1 = a * a / a;
+        int result2 = a / a * a;
+
+        System.out.printf("%d * %d / %d = %d%n", a, a, a, result1);
+        System.out.printf("%d * %d / %d = %d%n", a, a, a, result2);
+    }
+}
+```
+
+##### 예제 3-11/ch3/OperatorEx11.java
+```java
+class OperatorEx11 {
+    public static void main(String[] args) {
+        char a = 'a';
+        char d = 'd';
+        char zero = '0';
+        char two = '2';
+
+        System.out.printf("'%c' - '%c' = %d%n", d, a, d - a);
+        System.out.printf("'%c' - '%c' = %d%n", two, zero, two - zero);
+        System.out.printf("'%c' = %d%n", a, (int)a);
+        System.out.printf("'%c' = %d%n", d, (int)d);
+        System.out.printf("'%c' = %d%n", zero, (int)zero);
+        System.out.printf("'%c' = %d%n", two, (int)two);
+    }
+}
+```
+결과값은 숫자와 영문자의 유니코드를 보면 좀 더 쉽게 이해가 가능하다
+
+##### 예제 3-12/ch3/OperatorEx12.java
+```java
+class OperatorEx12 {
+    public static void main(String[] args) {
+        char c1 = 'a';
+        char c2 = c1;
+        char c3 = ' ';
+        
+        int i = c1 + 1;
+        c3 = (char) (c1 + 1);
+        c2++;
+        c2++;
+
+        System.out.println("i = " + i);
+        System.out.println("c2 = " + c2);
+        System.out.println("c3 = " + c3);
+    }
+}
+```
+
+##### 예제 3-13/ch3/OperatorEx13.java
+```java
+class OperatorEx13 {
+    public static void main(String[] args) {
+        char c1 = 'a';
+        
+//        char c2 = c1+1;  // 컴파일 에러
+        char c2 = 'a' + 1;
+
+        System.out.println(c2);
+    }
+}
+```
+위 에제를 보면 살짝 이상하다. c1에서 1을 더한 값이 존재하는데 컴파일 에러라고 뜬다. 그 이유는 (c1+1)은 변수와 리터럴 간의 연산이고 ('a'+1)은 리터럴 간의 연산이기에 후자는 자동으로 형변환이 가능한 것이다.
+
+##### 예제 3-14/ch3/OperatorEx14.java
+```java
+class OperatorEx14 {
+    public static void main(String[] args) {
+        char c = 'a';
+        for (int i=0; i<26; i++) {
+            System.out.print(c++);
+        }
+        System.out.println();
+        
+        c = 'A';
+        for (int i=0; i<26; i++) {
+            System.out.print(c++);
+        }
+        System.out.println();
+        
+        c = '0';
+        for (int i=0; i<10; i++) {
+            System.out.print(c++);
+        }
+        System.out.println();
+    }
+}
+```
+
+##### 예제 3-15/ch3/OperatorEx15.java
+```java
+class OperatorEx15 {
+    public static void main(String[] args) {
+        char lowerCase = 'a';
+        char upperCase = (char)(lowerCase - 32);  // 변수와 리터럴 간의 계산이기에 형변환을 해야한다.
+        System.out.println(upperCase);
+    }
+}
+```
+
+##### 예제 3-16/ch3/OperatorEx16.java
+```java
+class OperatorEx16 {
+    public static void main(String[] args) {
+        float pi = 3.141592f;
+        float shortPi = (int) (pi * 1000) / 1000f;
+        System.out.println(shortPi);
+    }
+}
+```
+위 예제를 통해서 소수점을 원하는 자리수에서 자를 수 있으니 알아두면... 쓸 일은 그닥 없지만 알아두자...
+
+##### 예제 3-17/ch3/OperatorEx17.java
+```java
+class OperatorEx17 {
+    public static void main(String[] args) {
+        double pi = 3.141592;
+        double shortPi = (int) (pi * 1000 + 0.5) / 1000.0;
+        System.out.println(shortPi);
+    }
+}
+```
+0.5를 더해줌으로서 반올림을 할 수 있다. 내림은 예제 3-16에서 한것과 동일하고 올림은 어떻게하면 좋을지 생각해보자. 예제로는 안나오는거 같더라
+
+##### 예제 3-18/ch3/OperatorEx18.java
+```java
+class OperatorEx18 {
+    public static void main(String[] args) {
+        double pi = 3.141592;
+        double shortPi = Math.round(pi * 1000) / 1000.0;
+        System.out.println(shortPi);
+    }
+}
+```
+Math 객체의 round 메서드는 소수 첫째 자리를 반올림 시켜준다. 예제 3-16과 17처럼 할 수도 있지만 Math 객체의 메서드를 사용하면 더 편하다.
+
+### 3.2 나머지 연산자 %
+나머지 연산자란 왼쪽의 피연산자를 오른쪽 피연산자로 나누고 난 나머지 값을 결과로 반환하는 연산자이다. 예는 아래와 같다
+
+##### 예제 3-19/ch3/OperatorEx19.java
+```java
+class OperatorEx19 {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 8;
+
+        System.out.printf("%d을 %d로 나누면, %n", x, y);
+        System.out.printf("몫은 %d이고, 나머지는 %d입니다.%n", x / y, x % y);
+    }
+}
+```
+위 예제의 x와 y의 값을 바꿔가면서 실행해보면 나머지 연산자에 대해 쉽게 알 수 있을 것이다.
+
+##### 예제 3-20/ch3/OperatorEx20.java
+```java
+class OperatorEx20 {
+    public static void main(String[] args) {
+        System.out.println(-10%8);
+        System.out.println(10%-8);
+        System.out.println(-10%-8);
+    }
+}
+```
+나머지 연산자는 나누는 수로 음수도 허용한다.
+
+
+## 4. 비교 연산자
+비교 연산자는 두 피연산자를 비교하는데 사용되는 연산자다. 연산 결과는 오직 true와 false 둘 중의 하나이다.
+
+### 4.1~2 대소/등가비교 연산자
+
+| 비교연산자 | 연산결과 |
+|:---:|:---|
+| > | 좌변 값이 크면, true 아니면 false |
+| < | 좌변 값이 작으면, true 아니면 false |
+| >= | 좌변 값이 크거나 같으면, true 아니면 false |
+| <= | 좌변 값이 작거나 같으면, true 아니면 false |
+| == | 두 값이 같으면, true 아니면 false |
+| != | 두 값이 다르면, true 아니면 false |
+
+##### 예제 3-21ch3/OperatorEx21.java
+```java
+class OperatorEx21 {
+    public static void main(String[] args) {
+        System.out.printf("10 == 10.0f \t %b%n", 10==10.0f);
+        System.out.printf("'0' == 0 \t %b%n", '0'==0);
+        System.out.printf("'A' == 65 \t %b%n", 'A'==65);
+        System.out.printf("'A' > 'B' \t %b%n", 'A' > 'B');
+        System.out.printf("'A'+1 != 'B' \t %b%n", 'A'+1 != 'B');
+    }
+}
+```
