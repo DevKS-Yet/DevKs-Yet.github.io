@@ -396,3 +396,50 @@ class OperatorEx21 {
     }
 }
 ```
+
+##### 예제 3-22/ch3/OperatorEx22.java
+```java
+class OperatorEx22 {
+    public static void main(String[] args) {
+        float f = 0.1f;
+        double d1 = 0.1;
+        double d2 = (double) f;
+
+        System.out.printf("10.0 == 10.0f %b%n", 10.0 == 10.0f);
+        System.out.printf("0.1 == 0.1f %b%n", 0.1 == 0.1f);
+        System.out.printf("f = %19.17f%n", f);
+        System.out.printf("d1 = %19.17f%n", d1);
+        System.out.printf("d2 = %19.17f%n", d2);
+        System.out.printf("d1 == f %b%n", d1 == f);
+        System.out.printf("d1 == d2 %b%n", d1 == d2);
+        System.out.printf("d2 == f %b%n", d2 == f);
+        System.out.printf("(float) d1 == f %b%n", (float) d1 == f);
+    }
+}
+```
+위 예제를 실행해보면 이상한 것들이 좀 있다. '10.0==10.0f'는 true인데 '0.1==0.1f'는 false라고 한다. 그 이유는 정수형과 달리 실수형은 근사값으로 저장되므로 오차가 발생할 수 있기 때문이다.  
+0.1f는 0.10000000149011612로 저장이 된다. 그에 비해 double은 0.10000000000000001로 저장이 된다.
+
+###### 문자열의 비교
+문자열 끼리도 비교가 가능하다. 하지만 문자열은 `==`가 아닌 `equals()`라는 메서드를 사용해야한다.
+
+##### 예제 3-23/ch3/OperatorEx23.java
+```java
+class OperatorEx23 {
+    public static void main(String[] args) {
+        String str1 = "abc";
+        String str2 = new String("abc");
+
+        System.out.printf("\"abc\" == \"abc\" ? %b%n", "abc"=="abc");
+        System.out.printf("str1 == \"abc\" ? %b%n", str1=="abc");
+        System.out.printf("str2 == \"abc\" ? %b%n", str2=="abc");
+        System.out.printf("str1.equals(\"abc\") ? %b%n", str1.equals("abc"));
+        System.out.printf("str2.equals(\"abc\") ? %b%n", str2.equals("abc"));
+        System.out.printf("str2.equals(\"ABC\") ? %b%n", str2.equals("ABC"));
+        System.out.printf("str2.equalsIgnoreCase(\"ABC\") ? %b%n", str2.equalsIgnoreCase("ABC"));
+    }
+}
+```
+
+> 6일차는 여기까지하고 남은 연산자 부분은 7일차에서 다루겠다. 생각보다 오래걸려서 당황스럽다.....  
+> 난 빠르게 객체지향 프로그래밍과 람다와 스트림 부분을 집중적으로 공부하고 싶었는데......
