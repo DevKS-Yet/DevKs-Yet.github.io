@@ -276,3 +276,140 @@ class FlowEx6 {
 }
 ```
 case문은 한줄에 하나씩 쓰던, 한 줄에 붙여서 쓰던 상관없다. 이 예제를 if문으로 한번 바꿔보는 연습도 해보길 바란다.
+
+##### 예제 4-7/ch4/FlowEx7.java
+```java
+import java.util.*;
+
+class FlowEx7 {
+    public static void main(String[] args) {
+        System.out.println("가위(1), 바위(2), 보(3) 중 하나를 입력하세요.>");
+        
+        Scanner scanner = new Scanner(System.in);
+        int user = scanner.nextInt();  // 화면을 통해 입력받은 숫자를 user에 저장
+        int com = (int) (Math.random() * 3) + 1;  // 1, 2, 3 중에 하나가 com에 저장됨
+
+        System.out.println("당신은 " + user + "입니다.");
+        System.out.println("컴퓨터는 " + com + "입니다.");
+        
+        switch (user-com) {
+          case 2: case -1:
+              System.out.println("당신이 졌습니다.");
+              break;
+          case 1: case -2:
+              System.out.println("당신이 이겼습니다.");
+              break;
+          case 0:
+              System.out.println("비겼습니다.");
+              break;
+        }
+    }
+}
+```
+위 예제는 switch문 말고도 게임을 좋아하는 사람이라면 숫자로도 저렇게 결과를 만들 수 있다는 것이 신기할 것이다.  
+아직 초보지만 길걷다가 갑자기 떠오른 아이디어가 있다면 메모장에 적고 프로그램으로 구현을 해보자.
+
+##### 예제 4-8/ch4/FlowEx8.java
+```java
+import java.util.*;
+
+class FlowEx8 {
+    public static void main(String[] args) {
+        System.out.print("당신의 주민번호를 입력하세요. (011231-1111222)>");
+        
+        Scanner scanner = new Scanner(System.in);
+        String regNo = scanner.nextLine();
+        
+        char gender = regNo.charAt(7);  // 입력받은 번호의 8번째 문자를 gender에 저장
+      
+        switch (gender) {
+          case '1': case '3':
+              System.out.println("당신은 남자입니다.");
+              break;
+          case '2': case '4':
+              System.out.println("당신은 여자입니다.");
+              break;
+          default:
+              System.out.println("유효하지 않은 주민등록번호입니다.");
+        }
+    }
+}
+```
+예제 4-7보다 직관적이고 이해하는데 어려움이 있지는 않을 것이다. 다만 charAt(7)을 적는다면 분명 `-`가 나와야하는데 그 뒤에 있는 숫자가 나오는 이유는 index는 0부터 시작하기 때문이다.  
+후에 배열 관련해서도 추가적으로 나올 것이니 지금 당장 익숙해지지 않아도 된다. 다만 준비는 해두면 좋다.
+
+##### 예제 4-9/ch4/FlowEx9.java
+```java
+import java.util.*;
+
+class FlowEx9 {
+    public static void main(String[] args) {
+        char grade = ' ';
+        
+        System.out.println("당신의 점수를 입력하세요. (1~100)>");
+        
+        Scanner scanner = new Scanner(System.in);
+        int score = scanner.nextInt();  // 화면을 통해 입력받은 숫자를 score에 저장
+      
+        switch (score) {
+            case 100: case 99: case 98: case 97: case 96: 
+            case 95: case 94: case 94: case 93: case 92: case 91: case 90:
+                grade = 'A';
+                break;
+                // .... 생략.......
+        }
+        System.out.println("당신의 학점은 " + grade + "입니다.");
+    }
+}
+```
+예전에 if문으로 적었던 코드를 switch문으로 바꾸었다. 기억을 되돌려보면 이렇게 흉칙한 코드를 적은 기억이 없는데 왜 이런가 싶다...  
+물론 실행시간은 switch문이 if문에 비해 빠르다. 하지만 이건 가독성이 너무 안좋고 적다보니 현타가 온다.... 이런 경우에는 if문을 사용하자. 옛날과는 달리 개인PC도 좋아지고 서버PC도 좋아졌기에 switch문 몇개를 if문으로 바꾼다고 하여 속도 저하가 체감되지는 않는다.
+
+###### switch문의 중첩
+switch문도 if문처럼 중첩이 가능하다. 하지만 추천하고 싶지는 않다. 일단 if문도 3중첩이 되기 시작하면 보기가 좋지 않은데 switch문은 더욱 심하다.
+
+##### 예제 4-11/ch4/FlowEx11.java
+```java
+import java.util.*;
+
+class FlowEx11 {
+    public static void main(String[] args) {
+        System.out.println("당신의 주민번호를 입력하세요. (011231-1111222)>");
+        
+        Scanner scanner = new Scanner(System.in);
+        String regNo = scanner.nextLine();
+        char gender = regNo.charAt(7);  // 입력받은 번호의 8번째 문자를 gender에 저장
+      
+        switch(gender) {
+          case '1': case '3':
+            switch (gender) {
+              case '1':
+                System.out.println("당신은 2000년 이전에 출생한 남자입니다.");
+                break;
+              case '3':
+                System.out.println("당신은 2000년 이후에 출생한 남자입니다.");
+                break;
+            }
+            break;  // 이 break문을 빼먹지 않도록 주의
+          case '2': case '4':
+            switch (gender) {
+              case '2':
+                System.out.println("당신은 2000년 이전에 출생한 여자입니다.");
+                break;
+              case '4':
+                System.out.println("당신은 2000년 이후에 출생한 여자입니다.");
+                break;
+            }
+            break;
+            
+          default:
+            System.out.println("유효하지 않은 주민등록번호입니다.");
+        }
+    }
+}
+```
+이번에도 매우 적기 싫었지만 예제 4-10에 비해 적을만 하다고 판단하여 끝까지 적었다.~~다신 안적는다....~~  
+보면 1과 3 또는 2와 4로 switch문을 통해 구분하고 그 다음에 한번 더 switch문을 사용해 1 또는 3을 구분한다.
+
+> 오늘은 조건문에 대해서 적어보았다.~~참고로 8일차라고 적었지만 전혀 8일차가 아니다...~~  
+> 이 포스팅은 며칠차에 맞춰서 하는 것보다 자신이 이해가 갈때까지 연습을 하고 그 다음으로 넘어가자.
