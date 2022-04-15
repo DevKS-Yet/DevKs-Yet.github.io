@@ -1,9 +1,10 @@
 ---
 title: "자료 구조 - Array"
-excerpt: "post"
+excerpt: "Array"
 
 categories:
 - post
+
 tags:
 - data structure
 - data
