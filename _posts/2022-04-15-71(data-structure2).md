@@ -1,5 +1,5 @@
 ---
-title: "자료 구조(Array)"
+title: "자료 구조 - Array"
 excerpt: "post"
 
 categories:
