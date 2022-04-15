@@ -85,10 +85,16 @@ Competitive Programming과 같이 제한이 주어지는 경우에는 메모리 
 | 프로그램을 구현할 때 정적 자료 구조의 메모리를 keep track해야함 | 프로그램을 구현할 때 사이즈에 대해서 체크할 필요까지는 없음 |
 
 &#42;참고로 C언어에서는 정적 자료 구조는 메모리 주소 할당이 유동적이고 동적 자료 구조는 메모리 주소 할당이 고정이라고 하지만 Java는 static을 제외한 모든 객체는 heap에 유동적으로 주소가 저장된다.  
-윗 줄에 관해서는 `call by reference, call by value`에 대해 알면 좋다. 아직 다루지는 않을 것이지만 궁금하신 분은 링크를 참고하자([혼잣말하는 개발자 call by reference/value](https://dev-cool.tistory.com/21, "ang SiwonDdi")).
+윗 줄에 관해서는 `call by reference, call by value`에 대해 알면 좋다. 아직 다루지는 않을 것이지만 궁금하신 분은 링크를 참고하자([혼잣말하는 개발자 call by reference/value](https://dev-cool.tistory.com/21 "ang SiwonDdi")).
 
 
 > 추가적으로 여기에 적지는 않았지만 `Hash Tables`도 있다. 이것은 선형과 비선형의 특징을 둘다 띄고 있다.  
 > Hash Tables에 대해서도 다루긴 하겠지만 선형과 비선형 자료 구조를 끝낸 후에 다루겠다.
 > 
 > 앞으로는 선형 자료 구조의 정적 자료 구조부터 시작하여 동적 그리고 비선형 자료 구조에 대해서 알아보겠다.
+
+### Reference
+- https://www.geeksforgeeks.org/data-structures
+- https://www.geeksforgeeks.org/static-data-structure-vs-dynamic-data-structure
+- https://codinghero.ai/static-and-dynamic-data-structures-explained-to-kids
+- https://dev-cool.tistory.com/21
