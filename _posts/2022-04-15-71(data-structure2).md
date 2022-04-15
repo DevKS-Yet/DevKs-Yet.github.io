@@ -14,6 +14,7 @@ tags:
 ---
 
 # 자료 구조 목차
+
 - Data-Structure
   - Linear
     - Static
