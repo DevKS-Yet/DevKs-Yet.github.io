@@ -3,7 +3,7 @@ title: "배열"
 excerpt: "Array"
 
 categories:
-- post
+- Data-Structure
 
 tags:
 - data structure

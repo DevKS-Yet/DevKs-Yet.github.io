@@ -1,9 +1,10 @@
 ---
 title: "자료 구조"
-excerpt: "post"
+excerpt: "Data-Structure"
 
 categories:
-- post
+- Data-Structure
+
 tags:
 - data structure
 - data
