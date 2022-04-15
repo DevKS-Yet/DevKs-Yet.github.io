@@ -94,7 +94,7 @@ Competitive Programming과 같이 제한이 주어지는 경우에는 메모리 
 > 앞으로는 선형 자료 구조의 정적 자료 구조부터 시작하여 동적 그리고 비선형 자료 구조에 대해서 알아보겠다.
 
 ### Reference
-- https://www.geeksforgeeks.org/data-structures
-- https://www.geeksforgeeks.org/static-data-structure-vs-dynamic-data-structure
-- https://codinghero.ai/static-and-dynamic-data-structures-explained-to-kids
-- https://dev-cool.tistory.com/21
+- [https://www.geeksforgeeks.org/data-structures](https://www.geeksforgeeks.org/data-structures)
+- [https://www.geeksforgeeks.org/static-data-structure-vs-dynamic-data-structure](https://www.geeksforgeeks.org/static-data-structure-vs-dynamic-data-structure)
+- [https://codinghero.ai/static-and-dynamic-data-structures-explained-to-kids](https://codinghero.ai/static-and-dynamic-data-structures-explained-to-kids)
+- [https://dev-cool.tistory.com/21](https://dev-cool.tistory.com/21)
