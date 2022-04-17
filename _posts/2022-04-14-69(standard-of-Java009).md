@@ -253,4 +253,7 @@ class FlowEx22 {
     }
 }
 ```
-`int[] arr`이라는 것은 배열이다. 아직 진도를 나가지는 않았지만 궁금하다면 해당 링크를 참고해주길 바란다[링크](https://devks-yet.github.io/data-structure/71(data-structure2)/).
+`int[] arr`이라는 것은 배열이다. 아직 진도를 나가지는 않았지만 궁금하다면 해당 [배열](https://devks-yet.github.io/data-structure/71(data-structure2)/) 를 참고해주길 바란다.
+
+
+### 2.2 while문
