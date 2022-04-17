@@ -96,6 +96,7 @@ int[][][] intThreeDimensionArray = { { {1, 2, 3}, {4, 5, 6} }, { {7, 8, 9}, {10,
 딥러닝이나 알고리즘을 깊게 공부하시는 분이 아닌이상 2차원 배열, 최대는 3차원 배열정도까지만 사용할 것이다. 대부분은 1차 배열로 해결될 것이다.  
 &#42; 만들 일은 없겠지만 최대 255차원까지 만들 수 있다.
 
+
 #### 1차원 배열 생성부터 출력
 ```java
 public class ArraySample1 {
@@ -152,6 +153,7 @@ public class ArraySample1 {
 }
 ```
 
+
 #### 배열을 위한 Object 메서드(class Objects for Arrays)
 ```java
 public class ArraySample2 {
@@ -167,6 +169,7 @@ public class ArraySample2 {
         System.out.println("strArray.getClass() = " + strArray.getClass());
         System.out.println("strArray.getClass().getSuperclass() = " + strArray.getClass().getSuperclass());
 ```
+
 
 #### 배열 복사(Cloning of arrays)
 ```java
@@ -185,6 +188,7 @@ public class ArraySample3 {
 복사를 했다면 같은 참조변수를 볼줄 알았지만 아니다. 새로운 객체를 생성하게 된다.  
 하지만 다차원일 경우에는 조금 다르다.
 
+
 ####
 ```java
 public class ArraySample4 {
@@ -199,8 +203,10 @@ public class ArraySample4 {
 ```
 결과가 신기하게도 `originalArray`의 참조를 따라가지는 않지만 그 하위에 있는 배열들은 같은 곳을 참조한다.
 
+
 > 적다보니 많이 길어졌다. 이렇게까지 적을 생각은 없었지만...  
 > 물론 이런 속성을 다 외울 필요는 없다고 생각한다. 다만 배열과 for문 또는 while문으로 무언가를 만들어보길 바란다. 익숙해지면 할 수 있는 것도 많아지고 재미도 있다.
+
 
 ### Reference
 - [https://www.geeksforgeeks.org/introduction-to-arrays/?ref=lbp](https://www.geeksforgeeks.org/introduction-to-arrays/?ref=lbp)
