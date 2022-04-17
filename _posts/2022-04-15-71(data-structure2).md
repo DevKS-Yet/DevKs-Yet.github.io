@@ -95,3 +95,113 @@ int[][][] intThreeDimensionArray = { { {1, 2, 3}, {4, 5, 6} }, { {7, 8, 9}, {10,
 ```
 딥러닝이나 알고리즘을 깊게 공부하시는 분이 아닌이상 2차원 배열, 최대는 3차원 배열정도까지만 사용할 것이다. 대부분은 1차 배열로 해결될 것이다.  
 &#42; 만들 일은 없겠지만 최대 255차원까지 만들 수 있다.
+
+#### 1차원 배열 생성부터 출력
+```java
+public class ArraySample1 {
+    public static void main(String[] args) {
+        System.out.println("-----intOneDimensionArray Start-----");
+        String[] stringOneDimensionArray = {"1", "2", "3"};  // 객체 생성 및 값 대입
+        for (int i=0; i<stringOneDimensionArray.length; i++) {
+            System.out.print(stringOneDimensionArray[i] + "\t");
+        }
+        System.out.println();
+        System.out.println("-----intOneDimensionArray Finish-----\n");
+  
+        System.out.println("-----intTwoDimensionArray Insert Start-----");
+        String[][] stringTwoDimensionArray = new String[3][3];
+        for (int i=0; i<stringTwoDimensionArray.length; i++) {
+            for (int j=0; j< stringTwoDimensionArray[i].length; j++) {
+                stringTwoDimensionArray[i][j] = ""+i+j;
+            }
+        }
+        System.out.println("-----intTwoDimensionArray Insert End-----\n");
+  
+        System.out.println("-----intTwoDimensionArray Print Start-----");
+        for (int i=0; i< stringTwoDimensionArray.length; i++) {
+            for (int j=0; j<stringTwoDimensionArray[i].length; j++) {
+                System.out.print(stringTwoDimensionArray[i][j] + "\t");
+            }
+            System.out.println();
+        }
+        System.out.println("-----intTwoDimensionArray Print End-----\n");
+  
+        System.out.println("-----intThreeDimensionArray Insert Start-----");
+        String[][][] stringThreeDimensionArray = new String[5][4][3];
+        for (int x=0; x<stringThreeDimensionArray.length; x++) {
+            for (int y=0; y<stringThreeDimensionArray[x].length; y++) {
+                for (int z=0; z<stringThreeDimensionArray[x][y].length; z++) {
+                    stringThreeDimensionArray[x][y][z] = ""+x+y+z;
+                }
+            }
+        }
+        System.out.println("-----intThreeDimensionArray Insert End-----\n");
+  
+        System.out.println("-----intThreeDimensionArray Print Start-----");
+        for (int x=0; x<stringThreeDimensionArray.length; x++) {
+            for (int y=0; y<stringThreeDimensionArray[x].length; y++) {
+                for (int z=0; z<stringThreeDimensionArray[x][y].length; z++) {
+                    System.out.print(stringThreeDimensionArray[x][y][z] + "\t");
+                }
+                System.out.println();
+            }
+            System.out.println();
+        }
+        System.out.println("-----intThreeDimensionArray Print End-----");
+    }  //main
+}
+```
+
+#### 배열을 위한 Object 메서드(class Objects for Arrays)
+```java
+public class ArraySample2 {
+    public static void main(String[] args) {
+        int intArray[] = new int[3];
+        byte byteArray[] = new byte[3];
+        short shortArray[] = new short[3];
+        String[] strArray = new String[3];
+
+        System.out.println("intArray.getClass() = " + intArray.getClass());
+        System.out.println("byteArray.getClass() = " + byteArray.getClass());
+        System.out.println("shortArray.getClass() = " + shortArray.getClass());
+        System.out.println("strArray.getClass() = " + strArray.getClass());
+        System.out.println("strArray.getClass().getSuperclass() = " + strArray.getClass().getSuperclass());
+```
+
+#### 배열 복사(Cloning of arrays)
+```java
+public class ArraySample3 {
+    public static void main(String[] args) {
+        int originalArray[] = {1, 2, 3};
+        int cloneArray[] = originalArray.clone();
+        System.out.println("originalArray == cloneArray : " + (originalArray==cloneArray));
+        for (int i=0; i<cloneArray.length; i++) {
+            System.out.print(cloneArray[i] + "\t");
+        }
+        System.out.println();
+    }
+}
+```
+복사를 했다면 같은 참조변수를 볼줄 알았지만 아니다. 새로운 객체를 생성하게 된다.  
+하지만 다차원일 경우에는 조금 다르다.
+
+####
+```java
+public class ArraySample4 {
+    public static void main(String[] args) {
+        int originalArray[][] = {{1, 2, 3}, {4, 5, 6}};
+        int cloneArray[][] = originalArray.clone();
+        System.out.println("originalArray == cloneArray : " + (originalArray == cloneArray));
+        System.out.println("originalArray[0] == cloneArray[0] : " + (originalArray[0] == cloneArray[0]));
+        System.out.println("originalArray[1] == cloneArray[1] : " + (originalArray[1] == cloneArray[1]));
+    }
+}
+```
+결과가 신기하게도 `originalArray`의 참조를 따라가지는 않지만 그 하위에 있는 배열들은 같은 곳을 참조한다.
+
+> 적다보니 많이 길어졌다. 이렇게까지 적을 생각은 없었지만...  
+> 물론 이런 속성을 다 외울 필요는 없다고 생각한다. 다만 배열과 for문 또는 while문으로 무언가를 만들어보길 바란다. 익숙해지면 할 수 있는 것도 많아지고 재미도 있다.
+
+### Reference
+- [https://www.geeksforgeeks.org/introduction-to-arrays/?ref=lbp](https://www.geeksforgeeks.org/introduction-to-arrays/?ref=lbp)
+- [https://www.geeksforgeeks.org/arrays-in-java](https://www.geeksforgeeks.org/arrays-in-java/)
