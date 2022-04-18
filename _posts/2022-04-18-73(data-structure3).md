@@ -43,6 +43,7 @@ tags:
 1. 동적 사이즈
 2. 쉬운 삽입 및 삭제
 
+
 ### 단점
 1. 랜덤 엑세스가 불가함. 첫 번째 노드부터 접근할 수 있음. 그르므로 바이너리 서치에는 연결 리스트를 사용하는 것이 효율적이지 않음
 2. 각 요소에 추가적으로 포인터를 위한 추가 메모리 공간이 필요함.
@@ -146,7 +147,8 @@ public class LinkedListSample4 {
 }
 ```
 
-> Linked List는 여기까지만 적고 스택으로 넘어가도록 하겠다.
+> Linked List는 여기까지만 적고 스택으로 넘어가도록 하겠다.  
+> 추후에 이 밖에도 Circular Linked List 또는 Double Linked List에 대해서도 정리하겠다.
 
 ### Referenc
 - [https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/?ref=lbp](https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/?ref=lbp)
