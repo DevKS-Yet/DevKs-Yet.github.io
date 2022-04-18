@@ -30,6 +30,7 @@ tags:
 오늘은 긴말 안하고 바로 스택에 대해서 알아보자
 
 ### 스택
+
 스택은 실행 시 특정 순서를 따르는 선형 자료 구조이다. 순서는 LIFO(Last In First Out) 또는 FILO(First In Last Out)일 수도 있다.
 
 다음은 스택에서 사용되는 기본적인 수행 용어이다.
@@ -39,12 +40,15 @@ tags:
 - isEmpty : 스택이 비어있다면 `true`를 반환하고 아니라면 `false`를 반환한다.
 
 ### 스택에 대해 이해하기
+
 현실에서도 많은 것들을 스택의 예로 들 수 있다. 음식점이나 집에 쌓여있는 접시를 생각해보자. 접시를 꺼낼때(물론 어떻게든 가운데 접시를 꺼낼 수도 있지만 대다수가) 가장 위에 있는 접시부터 꺼낼 것이다. 이것도 LIFO/FILO 순서를 따른다고 볼 수 있다.
 
 #### 스택 구현 방법
+
 스택은 배열(array) 또는 연결 리스트(Linked List)를 사용해서 구현할 수 있다.
 
 ###### 배열을 이용한 스택 구현
+
 ```java
 public class StackArray {
     static final int MAX = 1000;
@@ -115,6 +119,7 @@ public class Main {
 단점 : 동적이지 않다. 런타임에 따라서 크기가 유동적이지 못하다.
 
 ###### 연결 리스트를 이용한 스택 구현
+
 ```java
 public class StackLinkedList {
     
@@ -179,8 +184,159 @@ public class StackLinkedList {
 단점 : 포인터 할당으로 인해 추가적인 메모리가 필요하다(java에서는 객체 주소를 말하는 것?).
 
 ### 자바에서의 스택 클래스(Stack Class in Java)
+
 자바 콜렉션 프레임워크에서는 이전에 설명한 스택 모델과 동일한 개념의 스택 클래스를 제공합니다. 클래스는 LIFO를 기반으로 설계되어있습니다.  
 `Push`와 `Pop` 말고도 `empty`, `search` 그리고 `peek`라는 3개의 기능을 더 제공합니다.  
 스택 클래스는 Vector 클래스를 상속 받기에 Vector 클래스의 메서드도 사용이 가능하다.
 
+#### 스택 클래스의 상속 관계
+
 ![스택 클래스의 상속 관계](/assets/images/2022/hierarchy-of-the-Stack-class.png)
+
+#### 스택에 상속된 인터페이스 :
+
+- Serializable(직렬화) : 마커 인터페이스로써 직렬화 또는 역직렬화를 하기 위해서 구현해야한다.
+- Cloneable(클론) : 클론하기 위해서 객체에 구현해야하는 인터페이스이다.
+- Iterable<E> : 객체의 콜렉션을 반복할 수 있는지 없는지 확인한다.
+- Collection<E> : 다수의 데이터를 쉽고 효과적으로 처리할 수 있는 표준화된 방법을 제공하는 클래스의 집합(콜렉션의 요소)를 의미한다.
+- List<E> : 리스트 인터페이스는 콜렉션의 자식 인터페이스로써 순차적으로 저장할 수 있는 기능을 제공한다.
+- RandomAccess : RandomAccess는 리스트 상속에서 사용함으로써 리스트가 빠른 랜덤엑세스를 지원하는지 식별한다.
+
+#### 스택 생성 및 메서드 사용
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class Test {
+    public static void main(String[] args) {
+        Stack<Integer> integerStack = new Stack<Integer>();
+
+        System.out.println(integerStack.push(1));  // return input if success
+        System.out.println(integerStack.pop());  // return latest push and delete it
+        System.out.println(integerStack.push(2));
+        System.out.println(integerStack.peek());  // return latest push but don't delete
+        System.out.println(integerStack.search(2));  // return latest index which match parameter
+        System.out.println(integerStack.search(6));  // return -1 if nothing matches
+    }
+}
+```
+
+#### 스택 클래스의 다양한 메서드 사용
+
+1. 요소 추가하기 : push() 메서드를 사용해서 스택의 top에 요소를 집어넣는다.
+
+```java
+import java.io.*;
+import java.util.*;
+
+public class StackSample1 {
+    public static void main(String[] args) {
+        // Default initialization of Stack
+        Stack stack1 = new Stack();
+        
+        // Initialization of Stack with using Generics
+        Stack<String> stack2 = new Stack<String>();  // new Stack<>(); 도 가능
+        
+        // pushing the elements
+        stack1.push(4);
+        stack1.push("All");
+        stack1.push("DevKS");
+        
+        stack2.push("Welcome");
+        stack2.push("to");
+        stack2.push("DevKS\'s Blog");
+        
+        // Printing the Stack Elements
+        System.out.println(stack1);
+        System.out.println(stack2);
+    }
+}
+```
+
+2. 요소에 접근하기 : 스택의 첫 번째 요소를 검색 또는 갖고오기 위해서는 peek() 메서드를 사용한다. 요소를 검색 후 반환하며 해당 요소가 스택에서 삭제되지는 않는다.
+
+```java
+import java.util.*;
+import java.io.*;
+
+public class StackSample2 {
+    public static void main(String[] args) {
+        // Creating an empty Stack
+        Stack<String> stringStack = new Stack<String>();
+        
+        // Use push() to add elements into the Stack
+        stringStack.push("Welcome");
+        stringStack.push("To");
+        stringStack.push("DevKS\'s");
+        stringStack.push("Blog");
+        
+        // Displaying the Stack
+        System.out.println("Initial Stack : " + stringStack);
+        
+        // Fetching the element at the head of the Stack
+        System.out.println("The element at the top to th stack is : " + stringStack.peek());
+        
+        // Displaying the Stack after the Operation
+        System.out.println("Final Stack : " + stringStack);
+    }
+}
+```
+
+3. 요소 제거하기 : 요소를 제거하기 위해서는 pop() 메서드를 사용한다. 스택 최상위에 있는 요소가 뽑혀져 나오면서 스택에서는 삭제된다.
+
+```java
+import java.util.*;
+import java.io.*;
+
+public class StackSample3 {
+    public static void main(String[] args) {
+        // Creating an empty Stack
+        Stack<Integer> integerStack = new Stack<Integer>();
+        
+        // Use push() to add elements into the Stack. also can use add() which is in Vector class method
+        integerStack.push(10);
+        integerStack.push(15);
+        integerStack.push(30);
+        integerStack.push(20);
+        integerStack.push(5);
+        
+        // Displaying the Stack
+        System.out.println("Initial Stack : " + integerStack);
+        
+        // Removing elements using pop() method
+        System.out.println("Popped element : " + integerStack.pop());
+        System.out.println("Popped element : " + integerStack.pop());
+        
+        // Displaying the Stack after pop operation
+        System.out.println("Stack after pop operation : " + integerStack);
+    }
+}
+```
+
+*스택 클래스는 벡터 클래스를 상속받기에 벡터 클래스의 메서드도 사용가능하다. 너무 많아서 따로 언급은 하지 않겠다.*
+
+**주의: 자바에서의 스택 클래스는 벡터 클래스를 상속받으며 레거시 클래스인 것을 주의해야한다. thread-safe class임으로 thread safety가 필요없다면 overhead(과성능)이다. 그러므로 싱글 쓰레드 환경에서 사용할 것이라면 `ArrayDeque`를 사용하는 것을 추천한다.**
+
+```java
+import java.util.*;
+
+class StackSample4 {
+    public static void main(String[] args) {
+        Deque<Character> characterDeque = new ArrayDeque<Character>();
+        characterDeque.push('A');
+        characterDeque.push('b');
+        System.out.println(characterDeque.peek());
+        System.out.println(characterDeque.pop());
+    }
+}
+```
+
+> 이상으로 스택에 대해서 알아보았다.
+> 
+> 스택이란 것이 아직 어디에 쓰일지 까지는 잘 모르겠다. 궁긍하다면 아래 Reference에 있는 각종 알고리즘을 참고하자
+
+
+### References
+- [https://www.geeksforgeeks.org/stack-data-structure-introduction-program/?ref=lbp](https://www.geeksforgeeks.org/stack-data-structure-introduction-program/?ref=lbp)
+- [https://www.geeksforgeeks.org/stack-class-in-java/?ref=lbp](https://www.geeksforgeeks.org/stack-class-in-java/?ref=lbp)
