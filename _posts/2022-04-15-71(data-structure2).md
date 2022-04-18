@@ -163,7 +163,12 @@ public class ArraySample1 {
 }
 ```
 
+#### 1차원 배열
+
 ![one-dimensional-array](/assets/images/2022/one-dimensional-array.jpeg)
+
+#### 다차원 배열
+
 ![multi-dimensional-array](/assets/images/2022/multi-dimensional-array.jpeg)
 
 #### 배열을 위한 Object 메서드(class Objects for Arrays)
