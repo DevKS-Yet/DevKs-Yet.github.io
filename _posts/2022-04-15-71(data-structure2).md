@@ -191,7 +191,7 @@ public class ArraySample3 {
 하지만 다차원일 경우에는 조금 다르다.
 
 
-####
+#### 다차원 배열 복사
 ```java
 public class ArraySample4 {
     public static void main(String[] args) {
