@@ -30,10 +30,12 @@ tags:
 지난번 포스팅에서 자료 구조의 전체적인 것에 대해서 간략하게 살펴보았다. 이제부터는 최하위 레벨에 있는 자료 구조에 대해서 하나씩 알아보자
 
 ### 배열(Array)
+
 자바에서의 배열은 같은 타입의 변수들을 공통된 이름으로 묶어서 저장하는 것을 뜻한다.  
 C/C++에서의 배열은 자바와 다르게 작동한다.
 
 ###### 자바 배열의 특징
+
 - 자바의 모든 배열의 주소가 동적으로 할당된다.
 - 자바의 Array는 객체임으로 객체의 메소드인 `length`를 사용해서 배열의 길이를 알아낼 수 있다. C/C++은 `sizeof`를 사용
 - 자바의 배열 선언은 다른 변수 선언과 동일하며 데이터 타입 이후에 `[]`를 붙여준다.
@@ -47,6 +49,7 @@ C/C++에서의 배열은 자바와 다르게 작동한다.
 기본형 데이터 타입의 실제 값은 contiguous memory locations에 저장된다. 참조형 데이터 타입의 실제 객체는 heap segment에 저장이 된다.
 
 #### 배열 선언 방법
+
 ```java
 int intArray[];
 String[] stringArray;
@@ -55,6 +58,7 @@ MyArray[] myArray;
 위와 같이 `타입 변수명[]` 또는 `타입[] 변수명`으로 선언할 수 있다.
 
 #### 배열 객체 생성
+
 ```java
 int intArray[];
 intArray = new int[5];
@@ -68,6 +72,7 @@ short[] shortArray = (short[]) Array.newInstance(short.class, 4);  // 이 방법
 위와 같이 다양하게 생성할 수 있지만 `타입[] 변수명 = new 타입[길이]`를 사용하는 것을 추천한다.
 
 #### 배열 객체 생성과 동시에 배열에 리터럴 값 넣기
+
 ```java
 int[] intArray = new int[]{1, 2, 3, 4, 5};
 String[] stringArray = {"This", "is", "a", "word"};  // 주로 이걸 쓴다.
@@ -76,6 +81,7 @@ String[] stringArray = {"This", "is", "a", "word"};  // 주로 이걸 쓴다.
 &#42;혹여나 엄청나게 옛날 자바 버전을 사용한다면 2번째 방법이 안될 수도 있다.
 
 #### 배열 객체 생성 이후 리터럴 값 넣기
+
 ```java
 int[] intArray = new int[5];
 intArray[0] = 10;
@@ -85,6 +91,7 @@ intArray[3] = 20;  // 인덱스 순서대로 리터럴을 넣을 필요는 없�
 위에 언급했던 것과 같이 항상 배열의 길이와 인덱스에 대해 신경쓰자. 그리고 대부분의 배열은 순차적으로 집어넣는 데이터들이 많기에 반복문과 같이 사용하는 경우가 많다.
 
 #### 다차원 배열
+
 지금까지는 1차원적인 배열만 생성했지만 배열안에 배열을 또 넣을 수가 있다. 선언 방식은 1차원과 비슷함으로 배열 선언, 배열 생성 그리고 리터럴값 대입까지 한번에 적겠다.
 
 ```java
@@ -98,6 +105,7 @@ int[][][] intThreeDimensionArray = { { {1, 2, 3}, {4, 5, 6} }, { {7, 8, 9}, {10,
 
 
 #### 1차원 배열 생성부터 출력
+
 ```java
 public class ArraySample1 {
     public static void main(String[] args) {
@@ -155,6 +163,7 @@ public class ArraySample1 {
 
 
 #### 배열을 위한 Object 메서드(class Objects for Arrays)
+
 ```java
 public class ArraySample2 {
     public static void main(String[] args) {
@@ -174,6 +183,7 @@ public class ArraySample2 {
 
 
 #### 배열 복사(Cloning of arrays)
+
 ```java
 public class ArraySample3 {
     public static void main(String[] args) {
@@ -192,6 +202,7 @@ public class ArraySample3 {
 
 
 #### 다차원 배열 복사
+
 ```java
 public class ArraySample4 {
     public static void main(String[] args) {
