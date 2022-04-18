@@ -146,6 +146,7 @@ public class LinkedListSample4 {
 }
 ```
 
-> 적다보니 많이 길어졌다. 이렇게까지 적을 생각은 없었지만...  
+> Linked List는 여기까지만 적고 스택으로 넘어가도록 하겠다.
 
-### Reference
+### Referenc
+- [https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/?ref=lbp](https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/?ref=lbp)
