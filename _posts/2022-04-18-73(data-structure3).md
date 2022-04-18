@@ -150,5 +150,8 @@ public class LinkedListSample4 {
 > Linked List는 여기까지만 적고 스택으로 넘어가도록 하겠다.  
 > 추후에 이 밖에도 Circular Linked List 또는 Double Linked List에 대해서도 정리하겠다.
 
-### Referenc
+### Reference
+- [https://www.geeksforgeeks.org/linked-list-set-1-introduction/?ref=lbp](https://www.geeksforgeeks.org/linked-list-set-1-introduction/?ref=lbp)
 - [https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/?ref=lbp](https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/?ref=lbp)
+- [https://www.geeksforgeeks.org/linked-list-set-3-deleting-node/?ref=lbp](https://www.geeksforgeeks.org/linked-list-set-3-deleting-node/?ref=lbp)
+- [https://www.geeksforgeeks.org/linked-list-vs-array/?ref=lbp](https://www.geeksforgeeks.org/linked-list-vs-array/?ref=lbp)
