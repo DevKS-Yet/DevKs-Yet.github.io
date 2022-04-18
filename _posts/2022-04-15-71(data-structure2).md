@@ -205,8 +205,3 @@ public class ArraySample4 {
 ```
 결과가 신기하게도 `originalArray`의 참조를 따라가지는 않지만 그 하위에 있는 배열들은 같은 곳을 참조한다.
 
-
-
-### Reference
-- [https://www.geeksforgeeks.org/introduction-to-arrays/?ref=lbp](https://www.geeksforgeeks.org/introduction-to-arrays/?ref=lbp)
-- [https://www.geeksforgeeks.org/arrays-in-java](https://www.geeksforgeeks.org/arrays-in-java/)
