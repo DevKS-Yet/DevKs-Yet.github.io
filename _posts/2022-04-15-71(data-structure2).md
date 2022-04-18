@@ -206,6 +206,7 @@ public class ArraySample4 {
 결과가 신기하게도 `originalArray`의 참조를 따라가지는 않지만 그 하위에 있는 배열들은 같은 곳을 참조한다.
 
 
-> 적다보니 많이 길어졌다. 이렇게까지 적을 생각은 없었지만...  
-> 물론 이런 속성을 다 외울 필요는 없다고 생각한다. 다만 배열과 for문 또는 while문으로 무언가를 만들어보길 바란다. 익숙해지면 할 수 있는 것도 많아지고 재미도 있다.
 
+### Reference
+- [https://www.geeksforgeeks.org/introduction-to-arrays/?ref=lbp](https://www.geeksforgeeks.org/introduction-to-arrays/?ref=lbp)
+- [https://www.geeksforgeeks.org/arrays-in-java](https://www.geeksforgeeks.org/arrays-in-java/)
