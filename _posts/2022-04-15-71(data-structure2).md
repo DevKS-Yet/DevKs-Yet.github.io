@@ -34,6 +34,8 @@ tags:
 자바에서의 배열은 같은 타입의 변수들을 공통된 이름으로 묶어서 저장하는 것을 뜻한다.  
 C/C++에서의 배열은 자바와 다르게 작동한다.
 
+![배열](/assets/images/2022/about-array.png)
+
 ###### 자바 배열의 특징
 
 - 자바의 모든 배열의 주소가 동적으로 할당된다.
@@ -104,7 +106,7 @@ int[][][] intThreeDimensionArray = { { {1, 2, 3}, {4, 5, 6} }, { {7, 8, 9}, {10,
 &#42; 만들 일은 없겠지만 최대 255차원까지 만들 수 있다.
 
 
-#### 1차원 배열 생성부터 출력
+#### 1차원 및 다차원 배열 생성부터 출력
 
 ```java
 public class ArraySample1 {
@@ -161,6 +163,8 @@ public class ArraySample1 {
 }
 ```
 
+![one-dimensional-array](/assets/images/2022/one-dimensional-array.jpeg)
+![multi-dimensional-array](/assets/images/2022/multi-dimensional-array.jpeg)
 
 #### 배열을 위한 Object 메서드(class Objects for Arrays)
 
@@ -200,6 +204,7 @@ public class ArraySample3 {
 복사를 했다면 같은 참조변수를 볼줄 알았지만 아니다. 새로운 객체를 생성하게 된다.  
 하지만 다차원일 경우에는 조금 다르다.
 
+![one-dimensional-clone-array](/assets/images/2022/one-dimensional-clone-array.jpeg)
 
 #### 다차원 배열 복사
 
@@ -216,6 +221,8 @@ public class ArraySample4 {
 ```
 
 결과가 신기하게도 'originalArray'의 참조를 따라가지는 않지만 그 하위에 있는 배열들은 같은 곳을 참조한다.
+
+![multi-dimensional-clone-array](/assets/images/2022/multi-dimensional-clone-array.jpeg)
 
 
 > 적다보니 많이 길어졌다. 이렇게까지 적을 생각은 없었지만...  
