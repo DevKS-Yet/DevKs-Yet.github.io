@@ -203,6 +203,18 @@ public class ArraySample3 {
 
 #### 다차원 배열 복사
 
+```java
+public class ArraySample4 {
+    public static void main(String[] args) {
+        int originalArray[][] = { {1, 2, 3}, {4, 5, 6} };
+        int cloneArray[][] = originalArray.clone();
+        System.out.println("originalArray == cloneArray : " + (originalArray == cloneArray));
+        System.out.println("originalArray[0] == cloneArray[0] : " + (originalArray[0] == cloneArray[0]));
+        System.out.println("originalArray[1] == cloneArray[1] : " + (originalArray[1] == cloneArray[1]));
+    }
+}
+```
+
 결과가 신기하게도 'originalArray'의 참조를 따라가지는 않지만 그 하위에 있는 배열들은 같은 곳을 참조한다.
 
 
