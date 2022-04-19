@@ -50,7 +50,7 @@ Queue<Obj> queue = new PriorityQueue<Obj>();
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class QueueSample1 {
+public class QueueSample {
     public static void main(String[] args) {
         Queue<Integer> integerQueue = new LinkedList<>();
         
@@ -82,3 +82,129 @@ public class QueueSample1 {
 
 1. 요소 더하기
 
+```java
+import java.util.*;
+
+public class QueueSample1 {
+    public static void main(String[] args) {
+        Queue<String> stringQueue = new PriorityQueue<>();
+        
+        stringQueue.add("Hello");
+        stringQueue.add("Java");
+        
+        System.out.println(stringQueue);
+    }
+}
+```
+
+2. 요소 제거하기
+
+```java
+import java.util.*;
+
+public class QueueSample2 {
+    public static void main(String[] args) {
+        Queue<String> stringQueue = new PriorityQueue<>();
+        
+        stringQueue.add("Hello");
+        stringQueue.add("Java");
+        stringQueue.add("again");
+        
+        System.out.println("Initial Queue " + stringQueue);
+        
+        stringQueue.remove("Hello");
+        
+        System.out.println("After Remove " + stringQueue);
+        System.out.println("Poll Method " + stringQueue.poll());
+        System.out.println("Final Queue " + stringQueue);
+    }
+}
+```
+
+3. 큐 내부 순회하기
+
+```java
+import java.util.*;
+
+public class QueueSample3 {
+    public static void main(String[] args) {
+        Queue<String> stringQueue = new PriorityQueue<>();
+        
+        stringQueue.add("Hello");
+        stringQueue.add("Java");
+        stringQueue.add("!");
+        
+        Iterator iterator = stringQueue.iterator();
+        
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + "\t");
+        }
+    }
+}
+```
+
+### 큐의 특성
+
+- 큐에 요소를 삽입할 때는 큐 끝에 삽입되고 제거할 때는 큐 앞에서부터 제거된다. FIFO를 따른다.
+- 자바 큐는 각종 콜렉션 인터페이스 메서드를 지원한다. 예로 insertion, deletion, etc.
+- `LinkedList`, `ArrayBlockingQueue` 그리고 `PriorityQueue`가 큐의 구현체 클래스로 자주 사용된다.
+- 만약 `BlockingQueue` 메서드의 매개변수에 null 값이 들어가면 NullPointerException으로 처리된다.
+- java.util 패키지 안에 있는 큐는 무한(Unbounded) 큐이다.
+- java.util.concurrent 패키지 안에 있는 큐는 유한(Bounded) 큐이다.
+- 데크(Deque)를 제외한 모든 큐는 삽입은 head, 제거는 tail에서 하도록 지원된다. 데크는 양쪽에서 삽입과 제거가 가능하다.
+
+### 큐 인터페이스 구현체 클래스
+
+1. `PriorityQueue` : `PriorityQueue` 클래스는 우선 사항을 기반으로 수행하는 클래스이다. 큐는 FIFO 알고리즘으로 수행되지만 간혹 우선 순위에 따라서 실행해야하는 경우도 있다. 그때 `PriorityQueue`를 사용해야한다.
+
+```java
+import java.util.*;
+
+class QueuePriorityQueue {
+    public static void main(String[] args) {
+        // Creating empty priority queue
+        Queue<Integer> integerQueue = new PriorityQueue<>();
+        
+        // Adding items to the integerQueue using add()
+        integerQueue.add(10);
+        integerQueue.add(20);
+        integerQueue.add(15);
+        
+        // Printing the top element of the PriorityQueue
+        System.out.println(integerQueue.peek());
+        
+        // Printing the top element and removing it from the Priorityqueue container
+        System.out.println(integerQueue.poll());
+        
+        // Printing the top element again
+        System.out.println(integerQueue.peek());
+    }
+}
+```
+
+2. `LinkedList` : `LinkedList`는 콜렉션 프레임워크에서 연결 리스트 자료 구조를 상속받은 클래스이다. 요소가 연속적인 주소에 저장되지 않고 각 객체별로 데이터와 주소가 따로 저장되는 선형 자료 구조이다. 각 요소는 노드로 불리며 서로 포인터와 주소를 통해서 연결되어있다. 동적성과 쉬운 삽입 그리고 삭제로 인해 배열이나 큐보다 선호한다.
+
+```java
+import java.util.*;
+
+class QueueLinkedList {
+    public static void main(String[] args) {
+        // Creating empty LinkedList queue
+        Queue<Integer> integerQueue = new LinkedList<>();
+        
+        // Adding items to the integerQueue using add()
+        integerQueue.add(10);
+        integerQueue.add(20);
+        integerQueue.add(15);
+        
+        // Printing the top element of the PriorityQueue
+        System.out.println(integerQueue.peek());
+        
+        // Printing the top element and removing it from the LinkedList container
+        System.out.println(integerQueue.poll());
+        
+        // Printing the top element again
+        System.out.println(integerQueue.peek());
+    }
+}
+```
