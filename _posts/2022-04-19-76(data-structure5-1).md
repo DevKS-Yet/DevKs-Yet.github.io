@@ -155,7 +155,8 @@ public class QueueSample3 {
 
 ### 큐 인터페이스 구현체 클래스
 
-1. `PriorityQueue` : `PriorityQueue` 클래스는 우선 사항을 기반으로 수행하는 클래스이다. 큐는 FIFO 알고리즘으로 수행되지만 간혹 우선 순위에 따라서 실행해야하는 경우도 있다. 그때 `PriorityQueue`를 사용해야한다.
+- `PriorityQueue` :  
+`PriorityQueue` 클래스는 우선 사항을 기반으로 수행하는 클래스이다. 큐는 FIFO 알고리즘으로 수행되지만 간혹 우선 순위에 따라서 실행해야하는 경우도 있다. 그때 `PriorityQueue`를 사용해야한다.
 
 ```java
 import java.util.*;
@@ -182,7 +183,8 @@ class QueuePriorityQueue {
 }
 ```
 
-2. `LinkedList` : `LinkedList`는 콜렉션 프레임워크에서 연결 리스트 자료 구조를 상속받은 클래스이다. 요소가 연속적인 주소에 저장되지 않고 각 객체별로 데이터와 주소가 따로 저장되는 선형 자료 구조이다. 각 요소는 노드로 불리며 서로 포인터와 주소를 통해서 연결되어있다. 동적성과 쉬운 삽입 그리고 삭제로 인해 배열이나 큐보다 선호한다.
+- `LinkedList` :  
+`LinkedList`는 콜렉션 프레임워크에서 연결 리스트 자료 구조를 상속받은 클래스이다. 요소가 연속적인 주소에 저장되지 않고 각 객체별로 데이터와 주소가 따로 저장되는 선형 자료 구조이다. 각 요소는 노드로 불리며 서로 포인터와 주소를 통해서 연결되어있다. 동적성과 쉬운 삽입 그리고 삭제로 인해 배열이나 큐보다 선호한다.
 
 ```java
 import java.util.*;
@@ -209,7 +211,8 @@ class QueueLinkedList {
 }
 ```
 
-3. `PriorityBlockingQueue` : 앞서 얘기한 것처럼 `PriorityQueue`와 `LinkedList`는 thread-safe하지 않다. 그렇기에 thread-safe 구현이 필요할 때에는 `PriorityBlockingQueue`를 사용한다. `PriorityBlockingQueue`는 `PriorityQueue` 클래스의 특성을 따르면서 추가적으로 blocking retrieval operations을 제공한다.
+- `PriorityBlockingQueue` :  
+앞서 얘기한 것처럼 `PriorityQueue`와 `LinkedList`는 thread-safe하지 않다. 그렇기에 thread-safe 구현이 필요할 때에는 `PriorityBlockingQueue`를 사용한다. `PriorityBlockingQueue`는 `PriorityQueue` 클래스의 특성을 따르면서 추가적으로 blocking retrieval operations을 제공한다.
 
 ```java
 import java.util.concurrent.PriorityBlockingQueue;
