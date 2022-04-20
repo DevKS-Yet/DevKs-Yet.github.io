@@ -208,3 +208,39 @@ class QueueLinkedList {
     }
 }
 ```
+
+3. `PriorityBlockingQueue` : 앞서 얘기한 것처럼 `PriorityQueue`와 `LinkedList`는 thread-safe하지 않다. 그렇기에 thread-safe 구현이 필요할 때에는 `PriorityBlockingQueue`를 사용한다. `PriorityBlockingQueue`는 `PriorityQueue` 클래스의 특성을 따르면서 추가적으로 blocking retrieval operations을 제공한다.
+
+```java
+import java.util.concurrent.PriorityBlockingQueue;
+import java.util.*;
+
+class QueuePriorityBlockingQueue {
+    public static void main(String[] args) {
+        // Creating empty priority blocking queue
+        Queue<Integer> integerQueue = new PriorityBlockingQueue<>();
+        
+        // Adding items to the integerQueue using add()
+        integerQueue.add(10);
+        integerQueue.add(20);
+        integerQueue.add(15);
+      
+        // Printing the top element of the PriorityBlockingQueue
+        System.out.println(integerQueue.peek());
+        
+        // Printing the top element and removing it from the PriorityBlockingQueue
+        System.out.println(integerQueue.poll());
+        
+        // Printing the top element again
+        System.out.println(integerQueue.peek());
+    }
+}
+```
+
+> 간략하게 자바에서의 큐 인터페이스와 해당 구현체 클래스에 대해서 살짝 알아보았다.  
+> 다음은 언급한 PriorityQueue에 대해서 무엇인지 조금 더 알아보자
+
+
+### References
+
+- [https://www.geeksforgeeks.org/queue-interface-java/?ref=lbp](https://www.geeksforgeeks.org/queue-interface-java/?ref=lbp)
