@@ -28,7 +28,7 @@ tags:
     - Graph
 
 스택이 LIFO 또는 FILO 였다면 큐는 FIFO이다. 큐에 대해서 알아보자.  
-참고로 큐는 2번으로 나누어서 설명할 예정이다. Deque(Double Ended Queue)라고 불리는 것도 있기 때문이다.
+참고로 큐는 여러번으로 나누어서 설명할 예정이다. Deque(Double Ended Queue)라고 불리는 것도 있기 때문이다.
 
 ## 큐
 
