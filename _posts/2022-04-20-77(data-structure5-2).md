@@ -289,3 +289,11 @@ public class PriorityQueueSample {
 > 
 > 또한 초심자가 PriorityQueue를 primitive 타입 외 reference 타입으로 할려면 comparator 또는 comparable도 사용을 해야하는데 이 점은 어려워보인다.
 > 후에 공부하면서 필요하다고 느낄 때 자세히 살펴보는 것을 추천한다. PriorityQueue 외에도 queue 종류가 너무 많다.....
+
+### References
+
+- [https://www.geeksforgeeks.org/priority-queue-class-in-java/](https://www.geeksforgeeks.org/priority-queue-class-in-java/)
+- [https://docs.oracle.com/cd/E17802_01/j2se/j2se/1.5.0/jcp/beta1/apidiffs/java/util/PriorityQueue.html](https://docs.oracle.com/cd/E17802_01/j2se/j2se/1.5.0/jcp/beta1/apidiffs/java/util/PriorityQueue.html)
+- [https://stackoverflow.com/questions/13346551/sorting-priorityqueue](https://stackoverflow.com/questions/13346551/sorting-priorityqueue)
+- [https://stackoverflow.com/questions/25569625/sorting-priority-queue-in-java](https://stackoverflow.com/questions/25569625/sorting-priority-queue-in-java)
+- [https://stackoverflow.com/questions/14397674/java-sorting-a-queue](https://stackoverflow.com/questions/14397674/java-sorting-a-queue)
