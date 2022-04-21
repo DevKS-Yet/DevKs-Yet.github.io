@@ -48,7 +48,7 @@ tags:
 
 #### 큐 구현 방법
 
-배열을 사용해서 큐를 구현해보겠다.
+배열과 연결 리스트를 사용해서 큐를 구현해보겠다.
 
 ###### 배열을 이용한 큐 구현
 
@@ -121,6 +121,62 @@ public class Main {
 ```
 장점 : 구현하기가 쉽다.  
 단점 : 정적 자료 구조이기에 크기가 고정되어있다. 또한 대량의 enqueue 또는 dequeue가 실행될 때, 큐가 비어있더라도 실행이 안될 수도 있다(이 문제는 순환 큐를 만듬으로 피할 수 있다).
+
+###### 연결 리스트를 이용한 큐 구현
+
+```java
+class QueueNode {
+    int node;
+    QueueNode next;
+    
+    public QueueNode(int node) {
+        this.node = node;
+        this.next = null;
+    }
+}
+
+class QueueLinkedList {
+    QueueNode front, rear;
+    
+    public QueueLinkedList() {
+        this.front = this.rear = null;
+    }
+    
+    void enqueue(int node) {
+        QueueNode tmp = new QueueNode(node);
+        
+        if (this.rear == null) return this.front = this.rear = tmp;
+        
+        this.rear.next = tmp;
+        this.rear = tmp;
+    }
+    
+    void dequeue() {
+        if (this.front == null) return;
+        
+        QueueNode tmp = this.front;
+        this.front = this.front.next;
+        
+        if (this.front == null) this.rear = null;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        QueueLinkedList queueLinkedList = new QueueLinkedList();
+        queueLinkedList.enqueue(10);
+        queueLinkedList.enqueue(20);
+        queueLinkedList.dequeue();
+        queueLinkedList.dequeue();
+        queueLinkedList.enqueue(30);
+        queueLinkedList.enqueue(40);
+        queueLinkedList.enqueue(50);
+        queueLinkedList.dequeue();
+        System.out.println("QueueLinkedList Front : " + queueLinkedList.front.node);
+        System.out.println("QueueLinkedList Rear : " + queueLinkedList.rear.node);
+    }
+}
+```
 
 > 이것으로 큐에 대해서 개념과 구현을 해보았다. 이와 연관해서 자바의 큐 인터페이스 그리고 큐 인터페이스를 구현해주는 구현체 클래스에 대해서 알아보겠다.
 
