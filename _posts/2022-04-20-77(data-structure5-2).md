@@ -10,6 +10,7 @@ tags:
 - data
 - structure
 - dynamic
+- priority
 - queue
 ---
 
