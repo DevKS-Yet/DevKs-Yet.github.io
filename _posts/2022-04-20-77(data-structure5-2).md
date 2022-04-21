@@ -297,3 +297,4 @@ public class PriorityQueueSample {
 - [https://stackoverflow.com/questions/13346551/sorting-priorityqueue](https://stackoverflow.com/questions/13346551/sorting-priorityqueue)
 - [https://stackoverflow.com/questions/25569625/sorting-priority-queue-in-java](https://stackoverflow.com/questions/25569625/sorting-priority-queue-in-java)
 - [https://stackoverflow.com/questions/14397674/java-sorting-a-queue](https://stackoverflow.com/questions/14397674/java-sorting-a-queue)
+- [https://github.com/aditya-sridhar/java-priority-queue-example](https://github.com/aditya-sridhar/java-priority-queue-example)
