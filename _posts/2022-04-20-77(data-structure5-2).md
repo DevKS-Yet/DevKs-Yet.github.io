@@ -56,18 +56,236 @@ tags:
 
 #### PriorityQueue 생성하기
 
-- PriorityQueue()  :  
+- `PriorityQueue()`  :  
 PriorityQueue의 기본 capacity인 11로 생성한다
 
 ```java
 PriorityQueue<E> pq = new PriorityQueue<E>();
 ```
 
-- PriorityQueue(Collection<E> c) :  
+- `PriorityQueue(Collection<E> c)` :  
 특정 콜렉션의 요소를 담는 PriorityQueue를 생성한다
 
 ```java
 PriorityQueue<E> pq = new PriorityQueue<E>(Collection<E> c);
 ```
 
-- PriorityQueue(int initialCapacity) :  
+- `PriorityQueue(int initialCapacity)` :  
+초기 capacity를 주어 PriorityQueue를 생성한다
+
+```java
+PriorityQueue<E> pq = new PriorityQueue<E>(int initialCapacity);
+```
+
+- `PriorityQueue(int initialCapacity, Comparator<E> comparator)` :  
+초기 capacity와 정의한 comparator의 순서대로 저장하는 PriorityQueue를 생성한다
+
+```java
+PriorityQueue<E> pq = new PriorityQueue(int initialCapacity, Comparator<E> comparator);
+```
+
+- `PriorityQueue(PriorityQueue<E> c)` :  
+요소를 담고 있는 특정한 PriorityQueue로 PriorityQueue를 생성한다
+
+```java
+PriorityQueue<E> pq = new PriorityQueue(PriorityQueue<E> c);
+```
+
+- `PriorityQueue(SortedSet<E> c)` :  
+요소를 담고 있는 특정한 SortedSet으로 PriorityQueue를 생성한다
+
+```java
+PriorityQueue<e> pq = new PriorityQueue<E>(SortedSet<E> c);
+```
+
+#### PriorityQueue 기본 수행 작업 :  
+
+- boolean add(E element) : 특정 요소를 priority queue에 삽입
+- public peek() : queue의 head를 찾아서 제거하지않고 값을 반환한다. 큐가 비어있다면 null 반환
+- public poll() : queue의 head를 찾아서 제거 및 값을 반환한다. 큐가 비어있다면 null 반환
+
+```java
+import java.util.*;
+
+class PriorityQueueSample {
+    public static void main(String[] args) {
+        // Creating empty priority queue
+        PriorityQueue<Integer> integerPriorityQueue = new PriorityQueue<>();
+        
+        // Adding items to the integerPriorityQueue using add()
+        integerPriorityQueue.add(10);
+        integerPriorityQueue.add(20);
+        integerPriorityQueue.add(15);
+        
+        // Printing the top element of PriorityQueue
+        System.out.println(integerPriorityQueue.peek());
+        
+        // Printing the top element and removing it from the PriorityQueue container
+        System.out.println(integerPriorityQueue.poll());
+        
+        // Printing the top element again
+        System.out.println(integerPriorityQueue.peek());
+    }
+}
+```
+
+#### PriorityQueue 명령어
+
+Priority Queue 클래스에서 자주 사용되는 명령어(메서드)를 실행했을 시 변화되는 것을 알아보자
+
+- 요소 추가하기
+
+```java
+import java.util.*;
+import java.io.*;
+
+public class PriorityQueueSample1 {
+    public static void main(String[] args) {
+        PriorityQueue<String> stringPriorityQueue = new PriorityQueue<>();
+        
+        stringPriorityQueue.add("Hello");
+        stringPriorityQueue.add("World");
+        stringPriorityQueue.add("Java");
+        System.out.println(stringPriorityQueue);
+    }
+}
+```
+
+- 요소 제거하기
+
+```java
+import java.util.*;
+import java.io.*;
+
+public class PriorityQueueSample2 {
+    public static void main(String[] args) {
+        PriorityQueue<String> stringPriorityQueue = new PriorityQueue<>();
+        
+        stringPriorityQueue.add("Hello");
+        stringPriorityQueue.add("World");
+        stringPriorityQueue.add("Java");
+        
+        System.out.println("Initial PriorityQueue : " + stringPriorityQueue);
+        
+        stringPriorityQueue.remove("Hello");
+        
+        System.out.println("After Remove : " + stringPriorityQueue);
+        
+        System.out.println("Poll Method : " + stringPriorityQueue.poll());
+        
+        System.out.println("Final PriorityQueue : " + stringPriorityQueue);
+    }
+}
+```
+
+- 요소 갖고오기
+
+```java
+import java.util.*;
+
+public class PriorityQueueSample3 {
+    public static void main(String[] args) {
+        PriorityQueue<String> stringPriorityQueue = new PriorityQueue<>();
+        
+        stringPriorityQueue.add("Hello");
+        stringPriorityQueue.add("World");
+        stringPriorityQueue.add("Java");
+        
+        System.out.println("PriorityQueue : " + stringPriorityQueue);
+        
+        String element = stringPriorityQueue.peek();
+        System.out.println("Accessed Element : " + element);
+    }
+}
+```
+
+- 내부 순회하기
+
+```java
+import java.util.*;
+
+public class PriorityQueueSample4 {
+    public static void main(String[] args) {
+        PriorityQueue<String> stringPriorityQueue = new PriorityQueue<>();
+        
+        stringPriorityQueue.add("Hello");
+        stringPriorityQueue.add("World");
+        stringPriorityQueue.add("Java");
+        
+        Iterator iterator = stringPriorityQueue.iterator();
+        
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + "\t");
+        }
+    }
+}
+```
+
+> PriorityQueue가 순서대로 출력된다고 했는데 주의해야하는 점이 있다. 들어가면서 순서가 정리되면서 들어가는 것이 아니라 head부분만 정리가 되는건지 이해가 잘 가지 않는다.
+> 
+> 아래는 내가 해당 결과값을 확인해보기 위해 작성한 코드인데 원하는 값으로 나오지 않는다. 해당 부분은 좀 찾아보고 추가적으로 더 적겠다.  
+> ~~거지같넹;;;~~
+
+```java
+import java.util.Iterator;
+import java.util.PriorityQueue;
+
+public class PriorityQueueSample {
+    public static void main(String[] args) {
+        PriorityQueue<String> stringPriorityQueue = new PriorityQueue<>();
+
+        stringPriorityQueue.add("j");
+        stringPriorityQueue.add("i");
+        stringPriorityQueue.add("h");
+        stringPriorityQueue.add("g");
+        stringPriorityQueue.add("f");
+        stringPriorityQueue.add("e");
+        stringPriorityQueue.add("d");
+        stringPriorityQueue.add("c");
+        stringPriorityQueue.add("b");
+        stringPriorityQueue.add("a");
+
+        System.out.println("stringPriorityQueue.size() : " + stringPriorityQueue.size());
+        // 10
+      
+        System.out.println("그냥 stringPriorityQueue 출력 시 : " + stringPriorityQueue);
+        // a, b, e, d, c, i, f, j, g, h
+
+        System.out.print("하나씩 peek()로 출력 시 : ");
+        for (String s : stringPriorityQueue) {
+            System.out.print(s + "\t");
+        }
+        System.out.println();
+        // a, b, e, d, c, i, f, j, g, h
+      
+        System.out.print("Iterator로 출력 시 : ");
+        Iterator iterator = stringPriorityQueue.iterator();
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + "\t");
+        }
+        System.out.println();
+        // a, b, e, d, c, i, f, j, g, h
+
+        System.out.print("poll로 출력 시 : ");
+        while (!stringPriorityQueue.isEmpty()) {
+            System.out.print(stringPriorityQueue.poll() + "\t");
+        }
+        System.out.println();
+        // a, b, c, d, e, f, g, h, i, j 
+
+        System.out.println("stringPriorityQueue.size() : " + stringPriorityQueue.size());
+    }
+}
+```
+
+풀린 문제점 :
+
+- toString으로도 출력 시에는 unsorted으로 출력됨.
+- Iterator는 순서 상관없이 return 한다고 함([Link for Iterator](https://docs.oracle.com/javase/6/docs/api/java/util/PriorityQueue.html#iterator%28%29)). 순서대로 출력하고자 한다면 `Arrays.sort(pq.toArray())`를 사용할 것
+- 또한 들어갈 때마다 모든 요소를 비교해서 순서대로 저장하는 것이 아니다. 어떤 알고리즘으로 저장되는 순서를 알고싶다면 siftUpComparable를 확인해보자
+
+> PriorityQueue를 한번 보고 쓰기에는 좀 어려운 점이 많아보인다.
+> 실제로 stackoverflow나 각종 해외 사이트를 보면 대부분의 사람들이 필자와 같은 생각으로 toString이나 iterator로 출력을 했다가 순서대로 출력이 되지 않는다는 질문을 하는 것을 많이 볼 수 있다.
+> 
+> 또한 초심자가 PriorityQueue를 primitive 타입 외 reference 타입으로 할려면 comparator 또는 comparable도 사용을 해야하는데 이 점은 어려워보인다.
+> 후에 공부하면서 필요하다고 느낄 때 자세히 살펴보는 것을 추천한다. PriorityQueue 외에도 queue 종류가 너무 많다.....

@@ -80,7 +80,7 @@ public class QueueSample {
 
 ###### 큐 인터페이스 명령어(PriorityQueue)
 
-1. 요소 더하기
+- 요소 더하기
 
 ```java
 import java.util.*;
@@ -97,7 +97,7 @@ public class QueueSample1 {
 }
 ```
 
-2. 요소 제거하기
+- 요소 제거하기
 
 ```java
 import java.util.*;
@@ -110,18 +110,18 @@ public class QueueSample2 {
         stringQueue.add("Java");
         stringQueue.add("again");
         
-        System.out.println("Initial Queue " + stringQueue);
+        System.out.println("Initial Queue : " + stringQueue);
         
         stringQueue.remove("Hello");
         
-        System.out.println("After Remove " + stringQueue);
-        System.out.println("Poll Method " + stringQueue.poll());
-        System.out.println("Final Queue " + stringQueue);
+        System.out.println("After Remove : " + stringQueue);
+        System.out.println("Poll Method : " + stringQueue.poll());
+        System.out.println("Final Queue : " + stringQueue);
     }
 }
 ```
 
-3. 큐 내부 순회하기
+- 큐 내부 순회하기
 
 ```java
 import java.util.*;
