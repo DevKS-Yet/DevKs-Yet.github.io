@@ -287,6 +287,8 @@ public class PriorityQueueSample {
 > PriorityQueue를 한번 보고 쓰기에는 좀 어려운 점이 많아보인다.
 > 실제로 stackoverflow나 각종 해외 사이트를 보면 대부분의 사람들이 필자와 같은 생각으로 toString이나 iterator로 출력을 했다가 순서대로 출력이 되지 않는다는 질문을 하는 것을 많이 볼 수 있다.
 > 
+> 참고로 PriorityQueue에 삽입될 때 정렬되는 것에 대해서 알고싶다면 heap에 대해서 알아야하는데 또 heap에 대해서 알려면 트리 구조를 알아야한다. 고로 한번 흝어보고 다시 배워서 올릴게;;;
+> 
 > 또한 초심자가 PriorityQueue를 primitive 타입(;natural ordering) 외 reference 타입으로 할려면 comparator 또는 comparable도 사용을 해야하는데 이 점은 어려워보인다.
 > 후에 공부하면서 필요하다고 느낄 때 자세히 살펴보는 것을 추천한다. PriorityQueue 외에도 queue 종류가 너무 많다.....
 
