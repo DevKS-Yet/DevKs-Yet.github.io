@@ -62,7 +62,6 @@ public class DequeSample {
         System.out.println(deque);
         
         deque.removeFirst();
-        deque.
     }
 }
 ```
