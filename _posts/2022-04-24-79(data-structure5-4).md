@@ -56,3 +56,92 @@ tags:
 
 ![hierarchy of the ArrayDeque](/assets/images/2022/hierarchy-of-the-ArrayDeque.png)
 
+### 배열데크 선언 및 생성
+
+- `ArrayDeque()` : 초기 용량은 16 요소인 빈 배열데크 생성
+
+```java
+ArrayDeque<E> dq = new ArrayDeque<E>();
+```
+
+- `ArrayDeque(Collection<? extends E> c)` : 특정 콜렉션에 있는 엘레멘트로 배열데크 생성
+
+```java
+ArrayDeque<E> dq = new ArrayDeque<E>(Collection col);
+```
+
+- `ArrayDeque(int numofElements)` : 특정 용량의 빈 배열데크 생성
+
+```java
+ArrayDeque<E> dq = new ArrayDeque<E>(int numofElements);
+```
+
+#### 배열데크 예시
+
+```java
+import java.util.*;
+
+public class ArrayDequeSample {
+    public static void main(String[] args) {
+        Deque<Integer> integerDeque = new ArrayDeque<>(10);
+  
+        integerDeque.add(10);
+        integerDeque.add(20);
+        integerDeque.add(30);
+        integerDeque.add(40);
+        integerDeque.add(50);
+  
+        for (Integer element : integerDeque) {
+            System.out.println("Element : " + element);
+        }
+  
+        System.out.println("Using clear()");
+        integerDeque.clear();
+  
+        integerDeque.addFirst(1);
+        integerDeque.addFirst(2);
+  
+        integerDeque.addLast(9);
+        integerDeque.addLast(8);
+  
+        System.out.println("Above elements are removed now");
+  
+        System.out.print("Elements of deque using Iterator : ");
+        for (Iterator itr = integerDeque.iterator(); itr.hasNext();) {
+            System.out.print(itr.next() + "\t");
+        }
+        System.out.println();
+  
+        System.out.print("Elements of deque in reverse order : ");
+        for (Iterator dItr = integerDeque.descendingIterator(); dItr.hasNext();) {
+            System.out.print(dItr.next() + "\t");
+        }
+        System.out.println();
+  
+        System.out.println("Head Element Using element() : " + integerDeque.element());
+        System.out.println("Head Element Using getFirst() : " +integerDeque.getFirst());
+        System.out.println("Last Element using getLast() : " + integerDeque.getLast());
+  
+        Object[] arr = integerDeque.toArray();
+        System.out.println("Array Size : " + arr.length);
+  
+        System.out.print("Array elements : " );
+        for (int i=0; i<arr.length; i++) {
+            System.out.print(arr[i] + "\t");
+        }
+        System.out.println();
+  
+        System.out.println("Head element : " + integerDeque.peek());
+  
+        System.out.println("Head element poll : " + integerDeque.poll());
+  
+        integerDeque.push(10);
+        integerDeque.push(15);
+        integerDeque.push(20);
+  
+        System.out.println("Head element remove : " + integerDeque.remove());
+  
+        System.out.println("The final array is : " + integerDeque);
+    }
+}
+```
