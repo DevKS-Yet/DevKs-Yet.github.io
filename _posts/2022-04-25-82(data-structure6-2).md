@@ -85,3 +85,12 @@ TreeSet ts = new TreeSet(Collection col);
 ```java
 TreeSet ts = new TreeSet(SortedSet s);
 ```
+
+> TreeSet를 아직까진 어디에 쓰면 좋을지 모르겠다. 코딩 문제를 풀면서 array.sort용으로만 사용하고 있는데 추후 다른 용도로도 사용되는것을 본다면 추가로 적어두겠다.
+> 
+> 이제 graph만 남았는데 graph는 짧게만 설명하고 추가적으로 내가 궁금하거나 신기했던 것을 적는 일지가 되지 않을까 싶다.
+> 이런 정보글은 좀 더 실력과 필력이 좋아진 후에 잘 다듬어서 다시 적겠다.
+
+### Reference
+
+[https://www.geeksforgeeks.org/treeset-in-java-with-examples/?ref=lbp](https://www.geeksforgeeks.org/treeset-in-java-with-examples/?ref=lbp)
