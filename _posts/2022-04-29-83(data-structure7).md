@@ -43,3 +43,19 @@ tags:
 위와 같은 성질을 갖고 있다. 흔한 예를 들어본다면 웹사이트의 페이지끼리의 연관성을 표현할 때에도 자주 사용된다.
 
 ### 그래프의 종류
+
+#### 무방향 그래프(Undirected Graph)
+
+#### 방향 그래프(Directed Graph)
+
+#### 가중치 그래프(Weighted Graph)
+
+#### 연결 그래프(Connected Graph)
+
+#### 비연결 그래프(Disconnected Graph)
+
+#### 사이클(Cycle)
+
+#### 비순환 그래프(Acyclic Graph)
+
+#### 완전 그래프(Complete Graph)
